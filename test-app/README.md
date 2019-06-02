@@ -1,3 +1,9 @@
+## Otras vainas relevantes: 
+Proyectico de prueba tomado de: https://www.youtube.com/watch?v=Fdf5aTYRW0E con fin de familiarizarse con la tecnología y probar, sobre todo, que podamos utilizar git sin problemas.Este proyecto es sólo una referencia, pero al carpeta se borrará una vez le cojamos el piso y comencemos a desarrollar. 
+En el video también hay un instructivo de las herramientas que hay que instalar, es una mierda la instalación.
+Recomiendo que instalen  gitBash, si no lo tienen, y el Ubuntu como subsistema para usarlo en la temrinal de vscode de vez en cuando (buscar Ubuntu en el Microsoft Store).
+Leaánse las vainas de abajo, que son útiles.  -JM.
+
 # TestApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
