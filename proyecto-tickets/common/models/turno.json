@@ -1,0 +1,45 @@
+{
+  "name": "turno",
+  "plural": "turnos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tipo_turno": {
+      "type": "string",
+      "required": true
+    },
+    "tipo_consulta": {
+      "type": "string",
+      "required": true
+    },
+    "id_paciente": {
+      "type": "string"
+    },
+    "id_empleado_salud": {
+      "type": "string"
+    },
+    "codigo_turno": {
+      "type": "string",
+      "required": true
+    },
+    "fecha_hora_emision": {
+      "type": "date",
+      "required": true
+    },
+    "fecha_hora_inicio": {
+      "type": "date",
+      "required": true
+    },
+    "fecha_hora_fin": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

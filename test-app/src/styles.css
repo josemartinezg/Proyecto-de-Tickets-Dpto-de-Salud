@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,3 +32,11 @@
   .btn:hover {
     background: #666;
   }
+
+  
+.mat-btn{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
