@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   post = {
-    title: "Angular",
+    title: "PUCMM Salud",
     isActive: true
   }
 }   
