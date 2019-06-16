@@ -36,7 +36,7 @@
     "public": false
   },
   "turno": {
-    "dataSource": "db",
+    "dataSource": "postgre1",
     "public": true
   }
 }
