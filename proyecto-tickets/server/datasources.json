@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "postgreConnector": {
+    "host": "localhost",
+    "port": 5433,
+    "url": "",
+    "database": "postgres",
+    "password": "chema03",
+    "name": "postgreConnector",
+    "user": "postgres",
+    "connector": "postgresql"
   }
 }

@@ -1,12 +1,15 @@
 <h1>PUCMM Salud </h1>
 <mat-toolbar>
-    <button mat-icon-button [matMenuTriggerFor]="appMenu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+  <span>Tipo de paciente</span>
+</mat-toolbar>
 
-    <span>Tipo de paciente</span>
-  </mat-toolbar>
+User name: <input type="text" [(ngModel)]="userName">
+<button (click) = "search()">Search</button>
+<p>Login name: {{response?.login}} </p>
+<div *ngIf="response"> 
   
+  <p>No. of Repos: {{response.public_repos}}</p>
+</div>
 
   
 <tipo-turno-btn [is-active]="post.isActive"> </tipo-turno-btn>
