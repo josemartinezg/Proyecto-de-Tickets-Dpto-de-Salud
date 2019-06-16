@@ -10,9 +10,8 @@ import { createAotUrlResolver } from '@angular/compiler';
 export class TipoTurnoBtnComponent implements OnInit {
   turnos;
   @Input('is-active') isActive: boolean;
-  onSave(){
-    this.isActive = !this.isActive;
-    //console.log("Button was clicked");
+  generarTurno(){
+    console.log("Generar turno.");
   }
   constructor(service: TipoTurnoBtnService) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
