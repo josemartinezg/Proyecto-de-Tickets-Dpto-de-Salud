@@ -6,6 +6,9 @@ import { TipoTurnoBtnComponent } from './tipo-turno-btn/tipo-turno-btn.component
   declarations: [TipoTurnoBtnComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    TipoTurnoBtnComponent
   ]
 })
 export class GeneracionTurnoModule { }
