@@ -11,7 +11,8 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TipoTurnoBtnComponent } from './components/tipo-turno-btn/tipo-turno-btn.component';
 import { TipoTurnoBtnService } from './components/tipo-turno-btn/tipo-turno-btn.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {HttpClientModule} from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [
     TipoTurnoBtnService
