@@ -8,7 +8,7 @@ export class TipoTurnoBtnService {
   
 
   getTipoTurno(){
-    return ['Piscina', 'Consulta', 'Emergencia','Nuevo Ingreso','Emergencia','Certificación Médica'];
+    return ['Estudiante', 'Empleado', 'Contratista','Piscina','Certificación Médica','Emergencia'];
   }
 
 }
