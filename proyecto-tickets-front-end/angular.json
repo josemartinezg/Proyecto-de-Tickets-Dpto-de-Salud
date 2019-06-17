@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-app": {
+    "proyecto-tickets-front-end": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-app",
+            "outputPath": "dist/proyecto-tickets-front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-app:build"
+            "browserTarget": "proyecto-tickets-front-end:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-app:build:production"
+              "browserTarget": "proyecto-tickets-front-end:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-app:build"
+            "browserTarget": "proyecto-tickets-front-end:build"
           }
         },
         "test": {
@@ -107,16 +107,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-app:serve"
+            "devServerTarget": "proyecto-tickets-front-end:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-app:serve:production"
+              "devServerTarget": "proyecto-tickets-front-end:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "test-app"
+  "defaultProject": "proyecto-tickets-front-end"
 }
