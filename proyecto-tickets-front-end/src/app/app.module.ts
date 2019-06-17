@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { GeneracionTurnoModule } from './generacion-turno/generacion-turno.module';
 import { HttpClient } from 'selenium-webdriver/http';
@@ -21,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule, 
     GeneracionTurnoModule,
     MatToolbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
     
   ],
   providers: [

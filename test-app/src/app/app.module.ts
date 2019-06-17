@@ -13,6 +13,7 @@ import { TipoTurnoBtnService } from './components/tipo-turno-btn/tipo-turno-btn.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from "@angular/flex-layout";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatToolbarModule,
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [
     TipoTurnoBtnService

@@ -11,8 +11,17 @@ User name: <input type="text" [(ngModel)]="userName">
   <p>No. of Repos: {{response.public_repos}}</p>
 </div>
 
-  
-<tipo-turno-btn [is-active]="post.isActive"> </tipo-turno-btn>
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="75%"><tipo-turno-btn [is-active]="post.isActive"> </tipo-turno-btn></div>
+
+</div>
+
+
   <!--<div>
   
   
