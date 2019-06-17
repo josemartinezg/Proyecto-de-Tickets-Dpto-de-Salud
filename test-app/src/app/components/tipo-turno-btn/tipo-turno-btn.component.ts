@@ -24,8 +24,9 @@ export class TipoTurnoBtnComponent implements OnInit {
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
-    var dateTime = date+'T'+time;
-    console.log(dateTime + ' ' + turno);
+    var dateTime = date+' '+time;
+    var timeZone = dateTime + ' ' + "-4:00";
+    console.log(timeZone + ' ' + turno);
 
     let post = {
       tipo_turno: turno,
