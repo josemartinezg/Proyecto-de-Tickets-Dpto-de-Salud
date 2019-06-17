@@ -35,15 +35,14 @@ export class TipoTurnoBtnComponent implements OnInit {
       fecha_hora_fin: "2019-06-12T06:03:28.780Z"
     }
     this.http.get(this.url)
-    .subscribe(
-      response => {
+    .subscribe((response) => {
+        this.response = response;
         console.log(response);
-      }
-    );
+      })
     this.http.post(this.url, post)
     .subscribe(response =>{
     console.log(response);
-    });
+    })
     console.log("Generar turno.");
   }
 }
