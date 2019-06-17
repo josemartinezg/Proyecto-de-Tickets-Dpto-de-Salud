@@ -3,13 +3,13 @@
     "name": "db",
     "connector": "memory"
   },
-  "postgreConnector": {
+  "postgre1": {
     "host": "localhost",
     "port": 5433,
     "url": "",
     "database": "postgres",
     "password": "chema03",
-    "name": "postgreConnector",
+    "name": "postgre1",
     "user": "postgres",
     "connector": "postgresql"
   }

@@ -1,0 +1,17 @@
+<!--<tipo-turno-btn></tipo-turno-btn>-->
+<h1>PUCMM Salud </h1>
+<mat-toolbar>
+  <span>Tipo de paciente</span>
+</mat-toolbar>
+
+<ul>
+  <br>
+  <div class="row">
+    <div class="col-md-3" 
+    (click)="generarTurno()" 
+    [class.active] = "isActive" 
+    *ngFor="let turno of turnos">
+    <a href="#" class="btn btn-primary btn-lg btn-block btn-huge">{{ turno }}</a> 
+    </div>
+</div>
+</ul>
