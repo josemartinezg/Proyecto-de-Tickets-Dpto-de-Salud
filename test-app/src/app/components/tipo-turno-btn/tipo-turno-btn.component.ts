@@ -11,7 +11,11 @@ export class TipoTurnoBtnComponent implements OnInit {
   turnos;
   @Input('is-active') isActive: boolean;
   generarTurno(){
-    console.log("Generar turno.");
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+    var dateTime = date+' '+time;
+    console.log(dateTime);
   }
   constructor(service: TipoTurnoBtnService) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
