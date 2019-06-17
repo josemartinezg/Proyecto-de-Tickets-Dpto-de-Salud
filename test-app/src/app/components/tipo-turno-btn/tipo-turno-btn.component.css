@@ -1,7 +1,8 @@
 .btn-huge{
     padding-top:20px;
     padding-bottom:20px;
-
+    background: #2B68C2;
+    border-radius: 20px;
 }
 [class*="col-"] {
     margin-bottom: 50px;
