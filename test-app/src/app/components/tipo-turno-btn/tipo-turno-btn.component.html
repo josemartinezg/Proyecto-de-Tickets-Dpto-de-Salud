@@ -1,16 +1,12 @@
 <ul>
-
     <br>
-    
     <div class="row">
       <div class="col-md-4" 
       [class.active] = "isActive" 
       *ngFor="let turno of turnos"
       (click)="generarTurno(turno)" >
       <a  href="#" class="btn btn-primary btn-lg btn-block btn-huge">{{ turno }}</a>
-       
-      </div>
-      
+      </div>     
 </div>
 
 </ul>
