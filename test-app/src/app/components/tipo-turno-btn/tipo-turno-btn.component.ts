@@ -23,9 +23,9 @@ export class TipoTurnoBtnComponent implements OnInit {
   generarTurno(turno){
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds()+"."+today.getMilliseconds();
-    var dateTime = (date+'T'+time+'Z').toString;
-    console.log(dateTime + ' ' + turno);
+    var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+    var dateTime = date+'T'+time+'Z';
+    console.log("'" + dateTime + ' ' + turno + "'");
 
     let post = {
       tipo_turno: turno,
@@ -33,9 +33,9 @@ export class TipoTurnoBtnComponent implements OnInit {
       id_paciente: "20150379",
       id_empleado_salud: "corodriguez",
       codigo_turno: "string",
-      fecha_hora_emision: "2019-06-17T22:02:09.237Z",
-      fecha_hora_inicio: "2019-06-17T22:02:09.237Z",
-      fecha_hora_fin: "2019-06-17T22:02:09.237Z"
+      fecha_hora_emision: '2019-06-12 06:03:28',
+      fecha_hora_inicio: '2019-06-12 06:03:28',
+      fecha_hora_fin: '2019-06-12 06:03:28'
     }
     this.http.get(this.url)
     .subscribe((response) => {
