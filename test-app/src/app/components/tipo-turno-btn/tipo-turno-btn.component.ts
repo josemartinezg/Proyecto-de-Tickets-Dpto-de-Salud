@@ -25,7 +25,7 @@ export class TipoTurnoBtnComponent implements OnInit {
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
-    var dateTime = date+'T'+time+'Z';
+    var dateTime = date+' '+time;
     console.log("'" + dateTime + ' ' + turno + "'");
 
     let post = {
