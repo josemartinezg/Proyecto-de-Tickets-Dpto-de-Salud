@@ -1,0 +1,52 @@
+{
+  "name": "usuario_atencion",
+  "plural": "usuarios_atencion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_usuario": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_usuario": {
+      "type": "string",
+      "required": true
+    },
+    "correo_electronico": {
+      "type": "string"
+    },
+    "primer_nombre": {
+      "type": "string",
+      "required": true
+    },
+    "segundo_nombre": {
+      "type": "string"
+    },
+    "segundo_apellido": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "primer_apellido": {
+      "type": "string",
+      "required": true
+    },
+    "fecha_inclusion": {
+      "type": "date",
+      "required": true
+    },
+    "activo": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

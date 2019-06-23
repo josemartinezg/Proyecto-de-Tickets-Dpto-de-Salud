@@ -38,5 +38,13 @@
   "turno": {
     "dataSource": "postgre1",
     "public": true
+  },
+  "consulta": {
+    "dataSource": "postgre1",
+    "public": true
+  },
+  "usuario_atencion": {
+    "dataSource": "postgre1",
+    "public": true
   }
 }

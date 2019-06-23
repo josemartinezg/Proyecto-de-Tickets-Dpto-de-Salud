@@ -11,6 +11,7 @@ import { createAotUrlResolver } from '@angular/compiler';
 export class TipoTurnoBtnComponent implements OnInit {
   turnos;
   @Input('is-active') isActive: boolean;
+  @Input('tipo_turno') tipo_turno: string;
   response: any;
   url = 'http://localhost:3000/api/turnos';
   constructor(service: TipoTurnoBtnService, private http: HttpClient) { 

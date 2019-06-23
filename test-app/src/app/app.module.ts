@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
@@ -11,16 +12,19 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TipoTurnoBtnComponent } from './components/tipo-turno-btn/tipo-turno-btn.component';
 import { TipoTurnoBtnService } from './components/tipo-turno-btn/tipo-turno-btn.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tickets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     TodoItemComponent,
-    TipoTurnoBtnComponent
+    TipoTurnoBtnComponent,
+    ListaTicketsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatToolbarModule,
     HttpClientModule, 
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule, 
+
   ],
   providers: [
     TipoTurnoBtnService

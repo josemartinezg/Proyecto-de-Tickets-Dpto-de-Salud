@@ -1,13 +1,13 @@
 {
-  "name": "turno",
-  "plural": "turnos",
+  "name": "consulta",
+  "plural": "consultas",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id_turno": {
+    "id_consulta": {
       "type": "string",
       "required": true
     },
@@ -19,20 +19,6 @@
       "type": "boolean",
       "required": true,
       "default": true
-    },
-    "id_usuario_atencion": {
-      "type": "string",
-      "required": true
-    },
-    "fecha_hora_emision": {
-      "type": "date",
-      "required": true
-    },
-    "fecha_hora_inicio": {
-      "type": "date"
-    },
-    "fecha_hora_fin": {
-      "type": "date"
     }
   },
   "validations": [],
