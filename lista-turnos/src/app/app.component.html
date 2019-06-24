@@ -1,7 +1,12 @@
-<ul class="turnos">
-  <li *ngFor="let turno of turnos"
+<mat-toolbar>
+  <span>Turnos</span>
+</mat-toolbar>
+
+<mat-action-list>
+  <mat-list-item *ngFor="let turno of turnos"
   [class.selected]="turno === selectedTurno"
-  (click)="onselect(turno)">{{turno.name}}</li>
-</ul>
-<br />
+  (click)="onselect(turno)"> {{turno.name}} </mat-list-item>
+</mat-action-list>
+
 <turno-detail [turno]="selectedTurno"></turno-detail>
+
