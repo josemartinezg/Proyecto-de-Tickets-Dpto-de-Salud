@@ -1,0 +1,16 @@
+<h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;margin: 50px 50px"><font color="white" size="60"> Turnos en espera</font></h1>
+
+<mat-action-list>
+  <mat-list-item *ngFor="let turno of turnos"
+  [class.selected]="turno === selectedTurno"
+  (click)="onselect(turno)"> {{turno.name}} </mat-list-item>
+</mat-action-list>
+
+<turno-detail [turno]="selectedTurno"></turno-detail>
+<footer>
+  <div class="bottomright" >
+    <img  src="assets/img/logo.png" >
+  </div>
+</footer>
+
+
