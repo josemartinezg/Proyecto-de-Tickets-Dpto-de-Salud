@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { TipoTurnoBtnService } from './tipo-turno-btn.service';
 import { HttpClient } from '@angular/common/http';
+
 import { createAotUrlResolver } from '@angular/compiler';
 
 @Component({
@@ -13,6 +14,7 @@ export class TipoTurnoBtnComponent implements OnInit {
   @Input('is-active') isActive: boolean;
   @Input('tipo_turno') tipo_turno: string;
   response: any;
+  buttonName = 'Estudiante';
   url = 'http://localhost:3000/api/turnos';
   constructor(service: TipoTurnoBtnService, private http: HttpClient) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,

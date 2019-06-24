@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "string",
+      "required": true
+    },
     "id_turno": {
       "type": "string",
       "required": true

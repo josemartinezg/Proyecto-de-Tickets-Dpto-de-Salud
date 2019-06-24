@@ -22,7 +22,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "turnos": {
+      "type": "hasMany",
+      "model": "turno",
+      "foreignKey": "consulta_id"
+    }
+  },
   "acls": [],
   "methods": {}
 }

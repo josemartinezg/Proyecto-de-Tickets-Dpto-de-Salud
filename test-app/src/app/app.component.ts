@@ -22,7 +22,7 @@ export class AppComponent {
     obs.subscribe((response) => console.log(response));*/
   }
   search(){
-    this.http.get('https://api.github.com/users/' + this.userName)
+    this.http.get('http://localhost:3000/api/consultas?filter={"where":{"id_consulta": "est"}}')
     .subscribe((response) => {
       this.response = response;
       console.log(this.response);
