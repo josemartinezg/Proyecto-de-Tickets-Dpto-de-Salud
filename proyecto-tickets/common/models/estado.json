@@ -1,0 +1,29 @@
+{
+  "name": "estado",
+  "plural": "estados",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nombre_estado": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "estado_id": {
+      "type": "hasMany",
+      "model": "turno",
+      "foreignKey": "estado_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

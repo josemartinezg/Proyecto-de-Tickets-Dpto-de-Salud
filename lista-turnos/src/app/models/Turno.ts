@@ -1,4 +1,4 @@
-export interface ITurno{
+export class Turno{
     id:number;
     id_turno:string;
     tipo_consulta:string;
@@ -10,4 +10,5 @@ export interface ITurno{
     consulta_id:number;
     usuarios_id:number;
     estado_id:number
+    
 }

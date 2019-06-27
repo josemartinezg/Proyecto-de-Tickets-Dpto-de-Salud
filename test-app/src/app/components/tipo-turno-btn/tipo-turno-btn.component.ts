@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { TipoTurnoBtnService } from './tipo-turno-btn.service';
 import { HttpClient } from '@angular/common/http';
-
+import { TurnosHoy } from './TurnosHoy';
 import { createAotUrlResolver } from '@angular/compiler';
 
 @Component({
@@ -15,6 +15,7 @@ export class TipoTurnoBtnComponent implements OnInit {
   @Input('tipo_turno') tipo_turno: string;
   response: any;
   buttonName = 'Estudiante';
+  misTurnos:TurnosHoy[];
   url = 'http://localhost:3000/api/turnos';
   constructor(service: TipoTurnoBtnService, private http: HttpClient) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
@@ -26,19 +27,20 @@ export class TipoTurnoBtnComponent implements OnInit {
   generarTurno(turno){
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+    var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds()+"."+today.getUTCMilliseconds();
     var dateTime = date+' '+time;
     console.log("'" + dateTime + ' ' + turno + "'");
-
+    var turnoHoy = new TurnosHoy();
+    turnoHoy.getTurno(turno);
     let post = {
-      tipo_turno: turno,
-      tipo_consulta: "estudiante",
-      id_paciente: "20150379",
-      id_empleado_salud: "corodriguez",
-      codigo_turno: "string",
-      fecha_hora_emision: '2019-06-12 06:03:28',
-      fecha_hora_inicio: '2019-06-12 06:03:28',
-      fecha_hora_fin: '2019-06-12 06:03:28'
+      id_turno: turnoHoy.codigo,
+      tipo_consulta: turno,
+      id_usuario_atencion: "sorodriguez",
+      fecha_hora_emision: dateTime,
+      consulta_id: 1,
+      usuarios_id: 2,
+      estado_id: 1
+
     }
     this.http.get(this.url)
     .subscribe((response) => {

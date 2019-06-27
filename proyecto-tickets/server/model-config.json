@@ -46,5 +46,9 @@
   "usuario_atencion": {
     "dataSource": "postgre1",
     "public": true
+  },
+  "estado": {
+    "dataSource": "postgre1",
+    "public": true
   }
 }
