@@ -36,19 +36,19 @@
     "public": false
   },
   "turno": {
-    "dataSource": "postgre1",
+    "dataSource": "postgre2",
     "public": true
   },
   "consulta": {
-    "dataSource": "postgre1",
+    "dataSource": "postgre2",
     "public": true
   },
   "usuario_atencion": {
-    "dataSource": "postgre1",
+    "dataSource": "postgre2",
     "public": true
   },
   "estado": {
-    "dataSource": "postgre1",
+    "dataSource": "postgre2",
     "public": true
   }
 }
