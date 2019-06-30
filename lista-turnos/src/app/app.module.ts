@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TurnoTxtComponent } from './turno-txt/turno-txt.component';
 import { TurnoComponent } from './turno/turno.component'
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatListModule, 
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

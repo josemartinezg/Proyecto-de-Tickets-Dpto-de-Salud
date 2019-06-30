@@ -14,7 +14,7 @@ export class TurnoComponent implements OnInit {
 
   ngOnInit() {
     this.turnoService.getTurnos().subscribe(turnos => {
-      this.turnos = turnos;
+      this.turnos = turnos; 
     });
   }
 
