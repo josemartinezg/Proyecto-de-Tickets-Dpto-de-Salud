@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { TurnosHoy } from './TurnosHoy';
 import { createAotUrlResolver } from '@angular/compiler';
 
+var count = 0;
+
 @Component({
   selector: 'tipo-turno-btn',
   templateUrl: './tipo-turno-btn.component.html',
@@ -22,6 +24,7 @@ export class TipoTurnoBtnComponent implements OnInit {
      el servicio del componente, que es lo que queremos. */
     this.turnos = service.getTipoTurno(); 
    }
+   
 
 
   generarTurno(turno){
@@ -30,8 +33,9 @@ export class TipoTurnoBtnComponent implements OnInit {
     var time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds()+"."+today.getUTCMilliseconds();
     var dateTime = date+' '+time;
     console.log("'" + dateTime + ' ' + turno + "'");
+    count++;
     var turnoHoy = new TurnosHoy();
-    turnoHoy.getTurno(turno);
+    turnoHoy.getTurno(turno, count);
     let post = {
       id_turno: turnoHoy.codigo,
       tipo_consulta: turno,
