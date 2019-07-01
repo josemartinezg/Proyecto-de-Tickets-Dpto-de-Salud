@@ -25,6 +25,8 @@ import { SeleccionTicketsComponent } from './components/seleccion-tickets/selecc
 import { Turno } from './models/Turno';
 import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
 import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
+import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-atencion/turnos-usuario-atencion.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
       { path: 'vista-turno', component: TurnosComponent},
+      { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
+      
       
     ]),
 
