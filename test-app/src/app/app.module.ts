@@ -25,6 +25,7 @@ import { SeleccionTicketsComponent } from './components/seleccion-tickets/selecc
 import { Turno } from './models/Turno';
 import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
 import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
     NavbarComponent,
     TituloComponent,
     BtnContainerComponent,
-    SeleccionTicketsComponent
+    SeleccionTicketsComponent,
+    FooterComponent
 
   ],
   imports: [
