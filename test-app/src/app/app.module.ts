@@ -27,6 +27,7 @@ import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
 import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
 import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-atencion/turnos-usuario-atencion.component';
 
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-at
     NavbarComponent,
     TituloComponent,
     BtnContainerComponent,
-    SeleccionTicketsComponent
+    SeleccionTicketsComponent,
+    FooterComponent
 
   ],
   imports: [
