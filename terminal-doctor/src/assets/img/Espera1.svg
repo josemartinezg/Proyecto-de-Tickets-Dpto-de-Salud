@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="467.527" height="762.978" viewBox="0 0 467.527 762.978">
+  <g id="Espera1" transform="translate(-59 -217)">
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(59 250)" fill="#fff" stroke="#000" stroke-width="1">
+      <rect width="467.527" height="729.978" stroke="none"/>
+      <rect x="0.5" y="0.5" width="466.527" height="728.978" fill="none"/>
+    </g>
+    <text id="Turnos_en_espera" data-name="Turnos en espera" transform="translate(59 244)" font-size="30" font-family="ArialMT, Arial"><tspan x="0" y="0">Turnos en espera</tspan></text>
+  </g>
+</svg>
