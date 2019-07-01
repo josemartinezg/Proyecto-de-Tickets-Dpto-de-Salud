@@ -36,12 +36,13 @@ import { FooterComponent } from './components/footer/footer.component';
     TodoItemComponent,
     TipoTurnoBtnComponent,
     ListaTicketsComponent,
-    OpcionUsuarioComponent,
+
     NavbarComponent,
     TituloComponent,
     BtnContainerComponent,
     SeleccionTicketsComponent,
-    FooterComponent
+    FooterComponent,
+  
 
   ],
   imports: [

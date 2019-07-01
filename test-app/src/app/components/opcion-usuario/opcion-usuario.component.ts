@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./opcion-usuario.component.css']
 })
 export class OpcionUsuarioComponent implements OnInit {
-  nombreDoctor: string = "Dr. Mamañema";
+  nombreDoctor: string = "Dr. Soldevila";
   constructor() { }
 
   ngOnInit() {

@@ -9,9 +9,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule }from '@angular/material/table';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TurnoActualComponent } from './turno-actual/turno-actual.component';
+import { MatCardModule } from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import { OpcionUsuarioComponent } from '../components/opcion-usuario/opcion-usuario.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent],
+  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent],
   imports: [
     CommonModule,
     MatListModule, 
@@ -19,12 +25,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    MatMenuModule
+    
+   
   ],
   exports: [
     TurnosComponent,
     TurnosTxtComponent,
-    TurnosUsuarioAtencionComponent
+    TurnosUsuarioAtencionComponent,
+    TurnoActualComponent
   ]
 })
 export class ListaTurnosModule { }
