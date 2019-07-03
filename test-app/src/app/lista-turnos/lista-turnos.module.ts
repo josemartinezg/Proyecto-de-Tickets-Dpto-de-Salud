@@ -15,9 +15,13 @@ import {MatDividerModule} from '@angular/material/divider';
 import { OpcionUsuarioComponent } from '../components/opcion-usuario/opcion-usuario.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+
+
 
 @NgModule({
-  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent],
+  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent],
   imports: [
     CommonModule,
     MatListModule, 
@@ -29,7 +33,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatDividerModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule,
+
+  
     
    
   ],
@@ -37,7 +44,9 @@ import {MatMenuModule} from '@angular/material/menu';
     TurnosComponent,
     TurnosTxtComponent,
     TurnosUsuarioAtencionComponent,
-    TurnoActualComponent
+    TurnoActualComponent,
+    NavbarComponent
+    
   ]
 })
 export class ListaTurnosModule { }
