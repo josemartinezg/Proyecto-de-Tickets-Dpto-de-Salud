@@ -3,13 +3,13 @@
           <!-- Id Column -->
           <ng-container matColumnDef="id_turno">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-            <td class='bigText-turno' mat-cell *matCellDef="let turno">{{turno.id_turno}}</td>
+            <td  class='bigText-turno' mat-cell *matCellDef="let turno">{{turno.id_turno}}</td>
           </ng-container>
         
           <!-- Usuario Column -->
           <ng-container matColumnDef="id_usuario_atencion">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
-            <td class='bigText'  mat-cell *matCellDef="let row">{{row.id_usuario_atencion}}</td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero de Puesto</th>
+            <td class='bigText'  mat-cell *matCellDef="let row">{{row.consulta_id}}</td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

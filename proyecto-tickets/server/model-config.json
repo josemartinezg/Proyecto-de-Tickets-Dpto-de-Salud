@@ -50,5 +50,9 @@
   "estado": {
     "dataSource": "postgre1",
     "public": true
+  },
+  "numero_puesto": {
+    "dataSource": "postgre1",
+    "public": true
   }
 }
