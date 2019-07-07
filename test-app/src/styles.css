@@ -11,6 +11,10 @@
     line-height: 1.4;
   }
   
+  th{
+    font-size: 18px;
+  }
+  
   a {
     color: #333;
     text-decoration: none;
@@ -38,5 +42,36 @@
     padding-top:40px;
     padding-bottom:40px;
 }
+
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+.container {
+  padding: 0 1rem;
+}
+.tuma{
+color: grey;
+font-size: 20px;
+}
+.full-width-table {
+  width: 100%;
+}
+.data-table{
+  width: 80%;
+  margin: 20px auto;
+}
+.bigText-turno{
+  color: royalblue;
+  font-size:  24px;
+}
+.bigText{
+  color: #666;
+  font-size:  22px;
+}
+
+html { background-color: white    ; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,18 +1,9 @@
-<img  class="mini-header" src="assets/img/titulobotone.svg" style="margin: 65px 300px">
 
-<div class="container"
-     fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center center"
-     fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
-     
-  <div class="item item-1" fxFlex="75%"><tipo-turno-btn [is-active]="post.isActive"> </tipo-turno-btn></div>
- 
-</div>
+<router-outlet></router-outlet>
 <div class="container"
   fxLayoutAlign="end end"
 > <button (click)="search()"> <a>+</a> </button> </div>
+<app-footer></app-footer>
 
 
   <!--<div>

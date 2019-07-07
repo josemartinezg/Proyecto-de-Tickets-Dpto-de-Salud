@@ -16,6 +16,18 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tickets.component';
+import { OpcionUsuarioComponent } from './components/opcion-usuario/opcion-usuario.component';
+import { TituloComponent } from './components/titulo/titulo.component';
+import { BtnContainerComponent } from './components/btn-container/btn-container.component';
+import { RouterModule } from '@angular/router';
+import { SeleccionTicketsComponent } from './components/seleccion-tickets/seleccion-tickets.component';
+import { Turno } from './models/Turno';
+import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
+import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
+import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-atencion/turnos-usuario-atencion.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +35,13 @@ import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tic
     TodosComponent,
     TodoItemComponent,
     TipoTurnoBtnComponent,
-    ListaTicketsComponent
+    ListaTicketsComponent,
+    TituloComponent,
+    BtnContainerComponent,
+    SeleccionTicketsComponent,
+    FooterComponent,
+    
+  
 
   ],
   imports: [
@@ -37,9 +55,20 @@ import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tic
     HttpClientModule, 
     FormsModule,
     FlexLayoutModule,
-    MatListModule, 
+    MatListModule,
+    ListaTurnosModule,
+
+
+    RouterModule.forRoot([
+      { path: '', component: SeleccionTicketsComponent},
+      { path: 'vista-turno', component: TurnosComponent},
+      { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
+      
+      
+    ]),
 
   ],
+  
   providers: [
     TipoTurnoBtnService
   ],
