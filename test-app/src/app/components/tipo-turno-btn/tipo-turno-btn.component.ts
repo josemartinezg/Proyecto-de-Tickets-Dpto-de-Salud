@@ -3,6 +3,7 @@ import { TipoTurnoBtnService } from './tipo-turno-btn.service';
 import { HttpClient } from '@angular/common/http';
 import { TurnosHoy } from './TurnosHoy';
 import { DlgSelectUserComponent } from '../../lista-turnos/dlg-select-user/dlg-select-user.component'
+import {MatBottomSheetModule, } from '@angular/material/bottom-sheet';
 import { SelectUserComponent } from "../../lista-turnos/select-user/select-user.component";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { createAotUrlResolver } from '@angular/compiler';
@@ -30,7 +31,7 @@ export class TipoTurnoBtnComponent implements OnInit {
      el servicio del componente, que es lo que queremos. */
     this.turnos = service.getTipoTurno(); 
    }
-   openDialog(turno): void {
+   openDialog(): void {
     this.dialog.open(DlgSelectUserComponent);
 
     // dialogRef.afterClosed().subscribe(result => {

@@ -1,3 +1,27 @@
-<p>
-  dlg-select-user works!
-</p>
+<!-- <label id="example-radio-group-label">Elija el puesto de servicio</label>
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">Posicion 1</mat-radio-button>
+</mat-radio-group>
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="2">Posicion 2</mat-radio-button>
+</mat-radio-group> -->
+
+
+<label id="example-radio-group-label">Elija el puesto de servicio: </label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+   [(ngModel)]="puestoSeleccionado">
+  
+  <mat-radio-button class="example-radio-button" *ngFor="let puesto of puestos" [value]="puesto">
+    Puesto: {{puesto}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>Puesto seleccionado: {{puestoSeleccionado}}</div>
+<mat-card-actions>
+    <button mat-raised-button>Aleatorio</button>
+  <button mat-raised-button
+  (click)='onClick()'
+  >OK</button>
+</mat-card-actions>
+<!-- <div>Puesto seleccionado</div>  -->
