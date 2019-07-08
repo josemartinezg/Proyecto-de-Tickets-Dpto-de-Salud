@@ -26,7 +26,15 @@ import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
 import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
 import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-atencion/turnos-usuario-atencion.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { LoginComponent } from './components/login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatInputModule} from '@angular/material/input';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -40,6 +48,9 @@ import { FooterComponent } from './components/footer/footer.component';
     BtnContainerComponent,
     SeleccionTicketsComponent,
     FooterComponent,
+    SidebarComponent,
+    LoginComponent,
+   
     
   
 
@@ -57,12 +68,20 @@ import { FooterComponent } from './components/footer/footer.component';
     FlexLayoutModule,
     MatListModule,
     ListaTurnosModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+
 
 
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
       { path: 'vista-turno', component: TurnosComponent},
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
+      { path: 'login', component: LoginComponent},
       
       
     ]),
@@ -70,7 +89,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   
   providers: [
-    TipoTurnoBtnService
+    TipoTurnoBtnService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
