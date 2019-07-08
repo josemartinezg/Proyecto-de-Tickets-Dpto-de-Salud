@@ -23,6 +23,20 @@ app.start = function() {
   });
 };
 
+if (require.main === module) {
+  app.io = require('socket.io')(app.start());
+  app.io.on('connection', function(socket) {
+    console.log('a user connected');
+    socket.on('chat message', function(msg) {
+      console.log('message: ' + msg);
+      app.io.emit('chat message', msg + 'Te envié la vaina');
+    });
+    socket.on('disconnect', function() {
+      console.log('user disconnected');
+    });
+  });
+}
+
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
