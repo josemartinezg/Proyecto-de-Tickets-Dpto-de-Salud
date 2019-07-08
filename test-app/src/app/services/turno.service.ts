@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class TurnoService {
   url:string = 'http://localhost:3000/api/turnos';
-  limit = '?_limit=5';
+  limitUsuario = '?filter[where][estado_id]=1';
+  limitActual = '?filter[where][estado_id]=3';
   constructor(private http:HttpClient) { }
 
   getTurnos():Observable<Turno[]>{
-    return this.http.get<Turno[]>(`${this.url}${this.limit}`);
+    return this.http.get<Turno[]>(this.url + this.limitUsuario);
+  }
+  getTurnosActual():Observable<Turno[]>{
+    return this.http.get<Turno[]>(this.url + this.limitActual);
   }
 }

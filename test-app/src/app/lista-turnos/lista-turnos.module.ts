@@ -17,11 +17,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from '../components/navbar/navbar.component';
+import { BtnAceptarComponent } from './btn-aceptar/btn-aceptar.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
 @NgModule({
-  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent],
+  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent, BtnAceptarComponent],
   imports: [
     CommonModule,
     MatListModule, 
@@ -35,6 +37,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
+    FlexLayoutModule
 
   
     

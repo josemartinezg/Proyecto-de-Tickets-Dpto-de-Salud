@@ -26,6 +26,9 @@ import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
 import { ListaTurnosModule } from './lista-turnos/lista-turnos.module';
 import { TurnosUsuarioAtencionComponent } from './lista-turnos/turnos-usuario-atencion/turnos-usuario-atencion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-select-user.component';
+import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
 
 
 
@@ -40,6 +43,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BtnContainerComponent,
     SeleccionTicketsComponent,
     FooterComponent,
+    DlgSelectUserComponent,
+    SelectUserComponent,
     
   
 
@@ -57,7 +62,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FlexLayoutModule,
     MatListModule,
     ListaTurnosModule,
-
+    MatDialogModule,
 
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
@@ -68,7 +73,9 @@ import { FooterComponent } from './components/footer/footer.component';
     ]),
 
   ],
-  
+  entryComponents: [
+    DlgSelectUserComponent
+  ],
   providers: [
     TipoTurnoBtnService
   ],

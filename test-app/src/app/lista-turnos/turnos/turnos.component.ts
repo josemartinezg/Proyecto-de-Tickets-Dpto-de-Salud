@@ -9,6 +9,7 @@ import { TurnoDataSource } from '../../models/TurnoDataSource';
 })
 export class TurnosComponent implements OnInit {
   turnos: Turno[];
+  turnoActual: Turno[];
   
   dataSource: TurnoDataSource;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -16,9 +17,9 @@ export class TurnosComponent implements OnInit {
   constructor(private turnoService: TurnoService) { }
 
   ngOnInit() {
-    // this.turnoService.getTurnos().subscribe(turnos => {
-    //   this.turnos = turnos; 
-    // });
+    this.turnoService.getTurnosActual().subscribe(turnoActual => {
+      this.turnoActual = turnoActual; 
+    });
      this.dataSource = new TurnoDataSource(this.turnoService);
     // 
   }
