@@ -8,7 +8,7 @@
     "port": 5433,
     "url": "",
     "database": "postgres",
-    "password": "2864",
+    "password": "chema03",
     "name": "postgre1",
     "user": "postgres",
     "connector": "postgresql"
