@@ -35,6 +35,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from './services/auth.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-select-user.component';
+import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
+
 
 
 @NgModule({
@@ -51,6 +55,8 @@ import { AuthService } from './services/auth.service';
     SidebarComponent,
     LoginComponent,
    
+    DlgSelectUserComponent,
+    SelectUserComponent,
     
   
 
@@ -76,6 +82,7 @@ import { AuthService } from './services/auth.service';
     MatInputModule,
 
 
+    MatDialogModule,
 
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
@@ -87,7 +94,9 @@ import { AuthService } from './services/auth.service';
     ]),
 
   ],
-  
+  entryComponents: [
+    DlgSelectUserComponent
+  ],
   providers: [
     TipoTurnoBtnService,
     AuthService
