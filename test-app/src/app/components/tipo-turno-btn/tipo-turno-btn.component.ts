@@ -31,15 +31,11 @@ export class TipoTurnoBtnComponent implements OnInit {
     this.turnos = service.getTipoTurno(); 
    }
    openDialog(turno): void {
-    const dialogRef = this.dialog.open(DlgSelectUserComponent, {
-      height: '400px',
-      width: '600px',
-      data: {name: this.name, animal: this.animal}
-    });
+    this.dialog.open(DlgSelectUserComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    // });
 
     //this.generarTurno(turno);
   }
