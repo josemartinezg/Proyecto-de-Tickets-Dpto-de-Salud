@@ -36,9 +36,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from './services/auth.service';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-select-user.component';
 import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
-
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -54,7 +55,6 @@ import { SelectUserComponent } from './lista-turnos/select-user/select-user.comp
     FooterComponent,
     SidebarComponent,
     LoginComponent,
-   
     DlgSelectUserComponent,
     SelectUserComponent,
     
@@ -80,9 +80,9 @@ import { SelectUserComponent } from './lista-turnos/select-user/select-user.comp
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatInputModule,
-
-
     MatDialogModule,
+    MatBottomSheetModule,
+    MatRadioModule,
 
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
