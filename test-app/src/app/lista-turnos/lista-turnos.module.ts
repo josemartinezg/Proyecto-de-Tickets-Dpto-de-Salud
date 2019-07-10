@@ -48,7 +48,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TurnosTxtComponent,
     TurnosUsuarioAtencionComponent,
     TurnoActualComponent,
-    NavbarComponent
+    NavbarComponent,
+    TurnoActualComponent,
+    BtnAceptarComponent,
+    
     
   ]
 })
