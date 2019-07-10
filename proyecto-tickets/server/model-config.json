@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "postgre1",
+    "public": true
   },
   "AccessToken": {
     "dataSource": "db",
