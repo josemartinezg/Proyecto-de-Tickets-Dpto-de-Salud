@@ -25,7 +25,7 @@
   "relations": {
     "no_puesto": {
       "type": "hasMany",
-      "model": "consulta",
+      "model": "turno",
       "foreignKey": "no_puesto"
     }
   },

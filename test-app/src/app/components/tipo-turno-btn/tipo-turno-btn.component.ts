@@ -2,7 +2,8 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { TipoTurnoBtnService } from './tipo-turno-btn.service';
 import { HttpClient } from '@angular/common/http';
 import { TurnosHoy } from './TurnosHoy';
-import { DlgSelectUserComponent } from '../../lista-turnos/dlg-select-user/dlg-select-user.component'
+import { DlgSelectUserComponent } from '../../lista-turnos/dlg-select-user/dlg-select-user.component';
+import { TurnoService } from "../../services/turno.service";
 import {MatBottomSheetModule, } from '@angular/material/bottom-sheet';
 import { SelectUserComponent } from "../../lista-turnos/select-user/select-user.component";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -26,13 +27,20 @@ export class TipoTurnoBtnComponent implements OnInit {
   misTurnos:TurnosHoy[];
 
   url = 'http://localhost:3000/api/turnos';
-  constructor(service: TipoTurnoBtnService, private http: HttpClient, public dialog: MatDialog) { 
+  constructor(service: TipoTurnoBtnService, private turnoService: TurnoService, private http: HttpClient, public dialog: MatDialog) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
      el servicio del componente, que es lo que queremos. */
     this.turnos = service.getTipoTurno(); 
    }
-   openDialog(): void {
-    this.dialog.open(DlgSelectUserComponent);
+
+   cambioConfirmado(){
+     console.log("hola");
+   }
+   
+   openDialog(turno): void {
+    this.dialog.open(DlgSelectUserComponent, {
+      data: {turno},
+    });
 
     // dialogRef.afterClosed().subscribe(result => {
     //   console.log('The dialog was closed');
@@ -43,31 +51,31 @@ export class TipoTurnoBtnComponent implements OnInit {
 
 
   generarTurno(turno){
+   // this.turnoService.generarTurno(turno);
+    // count++;
+    // var turnoHoy = new TurnosHoy();
+    // turnoHoy.getTurno(turno, count);
+    // var dateTime = turnoHoy.getDate();
+    // let post = {
+    //   id_turno: turnoHoy.codigo,
+    //   tipo_consulta: turno,
+    //   id_usuario_atencion: "sorodriguez",
+    //   fecha_hora_emision: dateTime,
+    //   consulta_id: 1,
+    //   usuarios_id: 2,
+    //   estado_id: 1
 
-    count++;
-    var turnoHoy = new TurnosHoy();
-    turnoHoy.getTurno(turno, count);
-    var dateTime = turnoHoy.getDate();
-    let post = {
-      id_turno: turnoHoy.codigo,
-      tipo_consulta: turno,
-      id_usuario_atencion: "sorodriguez",
-      fecha_hora_emision: dateTime,
-      consulta_id: 1,
-      usuarios_id: 2,
-      estado_id: 1
-
-    }
-    this.http.get(this.url)
-    .subscribe((response) => {
-        this.response = response;
-        console.log(response);
-      })
-    this.http.post(this.url, post)
-    .subscribe(response =>{
-    console.log(response);
-    })
-    console.log("Generar turno.");
+    // }
+    // this.http.get(this.url)
+    // .subscribe((response) => {
+    //     this.response = response;
+    //     console.log(response);
+    //   })
+    // this.http.post(this.url, post)
+    // .subscribe(response =>{
+    // console.log(response);
+    // })
+    // console.log("Generar turno.");
   }
 
 

@@ -1,6 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Puesto } from "../../models/Puesto";
+import { TurnoService } from 'src/app/services/turno.service';
+
 
 export interface DialogData{
   perro: String;
@@ -15,15 +17,15 @@ export interface DialogData{
 export class DlgSelectUserComponent implements OnInit {
   puestoSeleccionado: string;
   puestos: string[] = ["1", "2"];
+  @Output() change = new EventEmitter();
   
 
-  constructor(
-    public dialogRef: MatDialogRef<DlgSelectUserComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService) {}
 
 
-    onClick(){
-      return this.puestoSeleccionado;
+    onClick(puestoSeleccionado){
+      console.log(this.data.turno);
+      this.turnoService.generarTurno(this.data.turno, puestoSeleccionado);
     }
   
 
