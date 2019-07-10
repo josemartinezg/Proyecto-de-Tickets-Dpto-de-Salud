@@ -40,6 +40,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-select-user.component';
 import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
 import {MatRadioModule} from '@angular/material/radio';
+import { RegistroUsuariosComponent } from './components/registro-usuarios/registro-usuarios.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import {MatRadioModule} from '@angular/material/radio';
     LoginComponent,
     DlgSelectUserComponent,
     SelectUserComponent,
+    RegistroUsuariosComponent,
     
   
 
@@ -89,6 +91,7 @@ import {MatRadioModule} from '@angular/material/radio';
       { path: 'vista-turno', component: TurnosComponent},
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
+      { path: 'signup', component: RegistroUsuariosComponent},
       
       
     ]),
