@@ -20,8 +20,8 @@
 <div>Puesto seleccionado: {{puestoSeleccionado}}</div>
 <mat-card-actions>
     <button mat-raised-button>Aleatorio</button>
-  <button mat-raised-button
-  (click)='onClick()'
+  <button mat-raised-button mat-dialog-close
+  (click)='onClick(puestoSeleccionado)'
   >OK</button>
 </mat-card-actions>
 <!-- <div>Puesto seleccionado</div>  -->

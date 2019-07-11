@@ -34,7 +34,7 @@
     <!-- Fecha Column -->
     <ng-container matColumnDef="fecha_hora_emision">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
-      <td mat-cell *matCellDef="let row">{{row.fecha_hora_emision}}</td>
+      <td mat-cell *matCellDef="let row">{{row.fecha_hora_emision.substring(11, 19)}}</td>
     </ng-container>
 
     <!-- Estado Column -->
