@@ -2,6 +2,9 @@ import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Puesto } from "../../models/Puesto";
 import { TurnoService } from 'src/app/services/turno.service';
+import { TurnosHoy } from 'src/app/components/tipo-turno-btn/TurnosHoy';
+import { ActivatedRoute } from '@angular/router';
+import { PrintService } from 'src/app/print.service';
 
 
 export interface DialogData{
@@ -20,12 +23,15 @@ export class DlgSelectUserComponent implements OnInit {
   @Output() change = new EventEmitter();
   
 
-  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService) {}
+  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService, route: ActivatedRoute, private printService: PrintService) {}
 
 
     onClick(puestoSeleccionado){
       console.log(this.data.turno);
       this.turnoService.generarTurno(this.data.turno, puestoSeleccionado);
+      var turnoHoy = new TurnosHoy();
+      turnoHoy.getTurno(this.data.turno, this.turnoService.getCount);
+      this.turnoService.imprimir(turnoHoy.codigo);
     }
   
 
@@ -35,7 +41,7 @@ export class DlgSelectUserComponent implements OnInit {
 
 
   ngOnInit() {
-
+    
   }
   
 }

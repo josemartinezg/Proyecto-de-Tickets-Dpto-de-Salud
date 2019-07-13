@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PrintService } from './print.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent {
   titulo = "Turnos"
   userName: string = "";
   response: any;
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, public printService: PrintService){
     
   }
   
