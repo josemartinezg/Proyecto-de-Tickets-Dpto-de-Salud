@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Turno } from '../models/Turno';
 import { Observable } from 'rxjs';
 import { TurnosHoy } from '../components/tipo-turno-btn/TurnosHoy';
-import { Router } from '@angular/router';
 
 var count = 0;
 @Injectable({
@@ -15,16 +14,13 @@ export class TurnoService {
   limitUsuario = '?filter[where][estado_id]=1';
   limitActual = '?filter[where][estado_id]=3';
   
-  constructor(private http:HttpClient, private router: Router) { }
+  constructor(private http:HttpClient) { }
 
   getTurnos():Observable<Turno[]>{
     return this.http.get<Turno[]>(this.url + this.limitUsuario);
   }
   getTurnosActual():Observable<Turno[]>{
     return this.http.get<Turno[]>(this.url + this.limitActual);
-  }
-  getCount(){
-    return count;
   }
   
   generarTurno(turno, puesto){
@@ -50,21 +46,6 @@ export class TurnoService {
     console.log(response);
     })
     console.log("Generar turno.");
-  }
-  isPrinting = false;
-  imprimir(documentData: string) {
-    this.isPrinting = true;
-    this.router.navigate(['/',
-  { outlets: {
-    'print': ['print', documentData]
-  }}]);
-  }
-  onDataReady(){
-    setTimeout(() => {
-      window.print();
-      this.isPrinting = false;
-      this.router.navigate([{ outlets: { print: null}}]);
-    });
   }
 
   asignarPuesto(){

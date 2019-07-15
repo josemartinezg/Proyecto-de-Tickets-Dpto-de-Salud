@@ -41,7 +41,6 @@ import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-selec
 import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
 import {MatRadioModule} from '@angular/material/radio';
 import { RegistroUsuariosComponent } from './components/registro-usuarios/registro-usuarios.component';
-import { PrintLayoutComponent } from './print-layout/print-layout.component';
 
 
 @NgModule({
@@ -60,7 +59,6 @@ import { PrintLayoutComponent } from './print-layout/print-layout.component';
     DlgSelectUserComponent,
     SelectUserComponent,
     RegistroUsuariosComponent,
-    PrintLayoutComponent,
     
   
 

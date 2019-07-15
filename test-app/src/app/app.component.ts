@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PrintService } from './print.service';
-import { TurnoService } from './services/turno.service';
-
 
 @Component({
   selector: 'app-root',
@@ -16,12 +13,8 @@ export class AppComponent {
   titulo = "Turnos"
   userName: string = "";
   response: any;
-  constructor(private http: HttpClient, public printService: PrintService, public turnoService: TurnoService){
+  constructor(private http: HttpClient){
     
-  }
-
-  onPrintTurno(){
-    this.turnoService.imprimir('turno');
   }
   
   ngOnInit(){
