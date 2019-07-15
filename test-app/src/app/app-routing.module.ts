@@ -4,11 +4,8 @@ import { PrintLayoutComponent } from './print-layout/print-layout.component';
 import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-select-user.component';
 
 const routes: Routes = [
-  { path: 'print',
-    outlet: 'print',
-    component: PrintLayoutComponent,
-    children: [
-      { path: 'dlg-select-user', component: DlgSelectUserComponent}
+  { path: 'print', outlet: 'print', component: PrintLayoutComponent, children: [
+      { path: 'dlg-select-user/:turnosIds', component: DlgSelectUserComponent}
     ]}
 ];
 
