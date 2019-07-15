@@ -18,10 +18,12 @@
   </mat-radio-button>
 </mat-radio-group>
 <div>Puesto seleccionado: {{puestoSeleccionado}}</div>
-<mat-card-actions>
-    <button mat-raised-button>Aleatorio</button>
+<div class="container">
+  <mat-card-actions>
+  <button mat-raised-button
+  color="primary">Auto</button>
   <button mat-raised-button mat-dialog-close
   (click)='onClick(puestoSeleccionado)'
   >OK</button>
-</mat-card-actions>
-<!-- <div>Puesto seleccionado</div>  -->
+  </mat-card-actions>
+</div><!-- <div>Puesto seleccionado</div>  -->

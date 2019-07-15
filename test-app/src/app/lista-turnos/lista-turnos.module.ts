@@ -19,11 +19,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { BtnAceptarComponent } from './btn-aceptar/btn-aceptar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BtnLlamarComponent } from './btn-llamar/btn-llamar.component';
+import { DlgTurnoLlamadoComponent } from './dlg-turno-llamado/dlg-turno-llamado.component';
 
 
 
 @NgModule({
-  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent, BtnAceptarComponent],
+  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent, BtnAceptarComponent, BtnLlamarComponent, DlgTurnoLlamadoComponent],
   imports: [
     CommonModule,
     MatListModule, 
@@ -51,7 +53,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NavbarComponent,
     TurnoActualComponent,
     BtnAceptarComponent,
-    
+    BtnLlamarComponent
     
   ]
 })

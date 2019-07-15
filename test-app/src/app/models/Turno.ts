@@ -9,6 +9,7 @@ export class Turno{
     fecha_hora_fin?:Date;
     consulta_id:number;
     usuarios_id:number;
-    estado_id:number
+    estado_id:number;
+    no_puesto: number;
     
 }

@@ -1,10 +1,11 @@
 .mat-elevation-z8{
     width: 750px;
 }
+
 th{
     font-size: 18px;
     text-align: center;
 }
-/* td{
-    text-align: center;
-} */
+.container{
+    margin-top: 25px;
+}

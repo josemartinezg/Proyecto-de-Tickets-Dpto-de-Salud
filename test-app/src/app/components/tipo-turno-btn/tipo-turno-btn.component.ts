@@ -8,6 +8,7 @@ import {MatBottomSheetModule, } from '@angular/material/bottom-sheet';
 import { SelectUserComponent } from "../../lista-turnos/select-user/select-user.component";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { createAotUrlResolver } from '@angular/compiler';
+import { Consulta } from '../../models/Consulta';
 
 var count = 0;
 
@@ -19,7 +20,7 @@ var count = 0;
 export class TipoTurnoBtnComponent implements OnInit {
   animal: string;
   name: string;
-  turnos;
+  turnos: Consulta[];
   @Input('is-active') isActive: boolean;
   @Input('tipo_turno') tipo_turno: string;
   response: any;
@@ -27,10 +28,13 @@ export class TipoTurnoBtnComponent implements OnInit {
   misTurnos:TurnosHoy[];
 
   url = 'http://localhost:3000/api/turnos';
-  constructor(service: TipoTurnoBtnService, private turnoService: TurnoService, private http: HttpClient, public dialog: MatDialog) { 
+  constructor(private service: TipoTurnoBtnService, private turnoService: TurnoService, private http: HttpClient, public dialog: MatDialog) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
      el servicio del componente, que es lo que queremos. */
-    this.turnos = service.getTipoTurno(); 
+    //this.turnos = service.getTipoTurnoAlt(); 
+    this.service.getTipoTurnoAlt().subscribe(turnoActual => {
+      this.turnos = turnoActual; 
+    });
    }
 
    cambioConfirmado(){

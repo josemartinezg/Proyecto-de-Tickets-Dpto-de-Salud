@@ -1,16 +1,16 @@
 <div 
   class="container"
   fxLayout="column"   
-  fxLayoutAlign="right"
   fxLayoutGap="25px">
 <mat-card> 
   <mat-card-title> {{turno.id_turno}}</mat-card-title> 
   <mat-card-subtitle>Turno actual</mat-card-subtitle>
-  <mat-card-actions>
+  <mat-card-actions >
     <div>
         <button mat-raised-button
         (click)="onClick()"
-        mat-raised-button [disabled]='isEnabled'>Aceptar</button>
+        mat-raised-button [disabled]='isEnabled'
+        color="primary">Aceptar</button>
         <button mat-raised-button>Cancelar</button>
     </div>
   </mat-card-actions>

@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Puesto } from "../../models/Puesto";
 import { TurnoService } from 'src/app/services/turno.service';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 
 export interface DialogData{
@@ -20,12 +21,18 @@ export class DlgSelectUserComponent implements OnInit {
   @Output() change = new EventEmitter();
   
 
-  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService) {}
+  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService,
+  public wsService: WebsocketService) {}
 
 
     onClick(puestoSeleccionado){
       console.log(this.data.turno);
-      this.turnoService.generarTurno(this.data.turno, puestoSeleccionado);
+      this.turnoService.createTurno(this.data.turno, puestoSeleccionado)
+      .subscribe(
+        turno => {
+          console.log(turno);
+        }
+      );
     }
   
 
@@ -33,6 +40,9 @@ export class DlgSelectUserComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  sendLiveTicket(){
+    
+  }
 
   ngOnInit() {
 

@@ -23,6 +23,8 @@ export class TurnosHoy{
                         this.codigo = "EMG00"+count; 
                 break;
             }
+            return this.codigo;
+
         }
 
         getDate(){

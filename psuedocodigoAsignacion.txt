@@ -1,0 +1,12 @@
+getCantEspera(positionNumber):
+    url = server.url;
+    //Filtrar por número de posición.
+    this.http.get(this.url + routeToWaitingTickets + positionNumber);
+    //Obtener la estructura del objeto.
+    this.http.getObjectMembers();
+    //Contar que tantos objetos posee la tabla obtenida en ese momento. 
+    cant = this.http.count();
+
+    return cant;
+
+assignToNumber():

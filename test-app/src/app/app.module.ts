@@ -41,8 +41,12 @@ import { DlgSelectUserComponent } from './lista-turnos/dlg-select-user/dlg-selec
 import { SelectUserComponent } from './lista-turnos/select-user/select-user.component'
 import {MatRadioModule} from '@angular/material/radio';
 import { RegistroUsuariosComponent } from './components/registro-usuarios/registro-usuarios.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AdminModule } from './admin/admin.module';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 
+const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,13 +89,15 @@ import { RegistroUsuariosComponent } from './components/registro-usuarios/regist
     MatDialogModule,
     MatBottomSheetModule,
     MatRadioModule,
-
+    AdminModule,
+    SocketIoModule.forRoot(config),
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
       { path: 'vista-turno', component: TurnosComponent},
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
+      { path: 'admin', component: DashboardComponent}
       
       
     ]),

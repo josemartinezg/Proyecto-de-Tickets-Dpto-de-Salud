@@ -6,10 +6,29 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', function(socket){
+io.on('connection', cliente =>{
   console.log('a user connected');
+  cliente.on('disconnect', () =>{
+    console.log('a user has disconnected');
+  })
+});
+// io.on('disconnect', function(socket){
+ 
+// });
+
+http.listen(3005, function(){
+  console.log('listening on *:3005');
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+io.emit('some event', { for: 'everyone' });
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
 });
