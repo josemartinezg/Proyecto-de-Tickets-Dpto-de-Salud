@@ -4,7 +4,6 @@ import { Puesto } from "../../models/Puesto";
 import { TurnoService } from 'src/app/services/turno.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
 
-
 export interface DialogData{
   perro: String;
 }
@@ -18,6 +17,8 @@ export interface DialogData{
 export class DlgSelectUserComponent implements OnInit {
   puestoSeleccionado: string;
   puestos: string[] = ["1", "2"];
+  turnoIds: string[];
+  turnoDetails: Promise<any>[];
   @Output() change = new EventEmitter();
   
 
@@ -44,8 +45,5 @@ export class DlgSelectUserComponent implements OnInit {
     
   }
 
-  ngOnInit() {
-
-  }
-  
+  ngOnInit() {}
 }

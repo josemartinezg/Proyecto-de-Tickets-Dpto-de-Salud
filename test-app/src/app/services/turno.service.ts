@@ -11,6 +11,7 @@ var count = 0;
   providedIn: 'root'
 })
 export class TurnoService {
+  
   url:string = 'http://localhost:3000/api/turnos';
   limitUsuario = '?filter[where][or][0][estado_id]=1&filter[where][or][1][estado_id]=2';
   limitActual = '?filter[where][estado_id]=3&filter[limit]=1';
@@ -93,5 +94,8 @@ export class TurnoService {
   sendLiveTicket(post){
     this.wsService.emit('turno', post);
   }
-
+  asignarPuesto(){
+    
+  }
+  
 }

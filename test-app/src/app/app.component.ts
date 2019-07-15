@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WebsocketService } from './services/websocket.service';
 
-
 @Component({
   selector: 'app-root',
   /* El selector es para traer HTML Markup del template relacionado con
