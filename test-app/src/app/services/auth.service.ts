@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-
+import { Observable } from 'rxjs';
+import { Usuario } from '../models/Usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,4 +27,8 @@ export class AuthService {
    register(model:any){
      return this.http.post(this.url,model);
    }
+
+   getUsers():Observable<Usuario[]>{
+     return this.http.get<Usuario[]>(this.url);
+     }
 }

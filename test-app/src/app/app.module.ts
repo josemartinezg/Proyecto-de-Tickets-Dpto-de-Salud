@@ -44,6 +44,11 @@ import { RegistroUsuariosComponent } from './components/registro-usuarios/regist
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { TurnosAdminComponent } from './admin/turnos-admin/turnos-admin.component';
+import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
+import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
+import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
+
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
@@ -97,7 +102,13 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
-      { path: 'admin', component: DashboardComponent}
+      { path: 'admin', component: DashboardComponent},
+      { path: 'turnos-admin', component: TurnosAdminComponent},
+      { path: 'usuarios-admin', component: UsuariosAdminComponent},
+      { path: 'estados-admin', component: EstadosAdminComponent},
+      { path: 'puestos-admin', component: PuestoAdminComponent}
+
+      
       
       
     ]),
