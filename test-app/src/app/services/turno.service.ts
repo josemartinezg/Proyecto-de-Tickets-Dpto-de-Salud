@@ -60,8 +60,8 @@ export class TurnoService {
     .subscribe(response =>{
     console.log(response);
     })
-    this.sendLiveTicket(post);
-    console.log("Generar turno.");
+    // this.sendLiveTicket(post);
+    // console.log("Generar turno.");
   }
 
   createTurno(turno, puesto): Observable<Turno>{
@@ -91,9 +91,9 @@ export class TurnoService {
 
   }
 
-  sendLiveTicket(post){
-    this.wsService.emit('turno', post);
-  }
+  // sendLiveTicket(post){
+  //   this.wsService.emit('turno', post);
+  // }
   asignarPuesto(){
     
   }

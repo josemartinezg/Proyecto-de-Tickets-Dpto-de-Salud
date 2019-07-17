@@ -32,3 +32,17 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+var jwt = require("jsonwebtoken");
+
+var METABASE_SITE_URL = "http://localhost:4000";
+var METABASE_SECRET_KEY = "9e25b0ea3b5c809050e88a26e85793af3f17a9e603d2e6861a8500507fff749a";
+
+var payload = {
+  resource: { dashboard: 3 },
+  params: {},
+  exp: Math.round(Date.now() / 1000) + (10 * 60) // 10 minute expiration
+};
+var token = jwt.sign(payload, METABASE_SECRET_KEY);
+
+var iframeUrl = METABASE_SITE_URL + "/embed/dashboard/" + token + "#bordered=true&titled=true";
