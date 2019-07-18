@@ -3,14 +3,17 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/Usuario';
+import { Globals } from '../../globals';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  url:string = 'http://localhost:3000/api/Users/';
+  /*Probar */
+  url:string;
+  relation: string = 'Users/'
 
-  constructor(private http: HttpClient) {
-    
+  constructor(private http: HttpClient, private glob: Globals) {
+    this.url = this.glob.SERVER_URL + this.relation;
    }
    login(model:any){
      return this.http.post(this.url + 'login',model).pipe(
