@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/Usuario';
 import { Globals } from '../../globals';
+import { GeneralConfig } from '../../app/pro_config';
 @Injectable({
   providedIn: 'root'
 })
