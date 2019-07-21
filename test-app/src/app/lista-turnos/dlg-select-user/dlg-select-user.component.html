@@ -7,6 +7,7 @@
 </mat-radio-group> -->
 
 
+
 <label id="example-radio-group-label">Elija el puesto de servicio: </label>
 <mat-radio-group
   aria-labelledby="example-radio-group-label"
@@ -27,3 +28,86 @@
   >OK</button>
   </mat-card-actions>
 </div><!-- <div>Puesto seleccionado</div>  -->
+
+<!-- <div id="print-section" class="invoice-box">
+  <div id="invoice-POS">
+    <div id="top">
+      <div class="logo"></div>
+      <div class="info">
+        <h2>config.empresa</h2>
+      </div>
+
+    </div>
+
+    <div id="mid">
+      <div class="info">
+        <h2>Información de contacto</h2>
+        <p>
+          config.direccion
+          <br /> Email : JohnDoe@gmail.com
+          <br /> Tel : config.telefono
+          <br /> NCF: ncf
+          <br /> Codigo: codigoNum
+        </p>
+      </div>
+    </div>
+
+    <div id="bot">
+      <div id="table">
+        <table>
+          <tr class="tabletitle">
+            <td class="item">
+              <h2>Descripción</h2>
+            </td>
+            <td class="Hours">
+              <h2>Itbis</h2>
+            </td>
+            <td class="Rate">
+              <h2>Valor</h2>
+            </td>
+          </tr>
+          <tr *ngFor="let p of productosAgregados" class="service">
+            <td class="tableitem">
+              <p class="itemtext">p.cantidadAVender x p.precio * (p.porcentaje + 1)| currency:'DOP ':'2.2-4'
+                <br />p.nombre
+              </p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">(p.cantidadAVender * p.impuesto)| currency:'DOP ':'2.2-4'</p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">p.cantidadAVender * (p.precio * (p.porcentaje + 1))| currency:'DOP ':'2.2-4'</p>
+            </td>
+          </tr>
+          <tr class="tabletitle">
+            <td></td>
+            <td class="Rate">
+              <h2>Itbis</h2>
+            </td>
+            <td class="payment">
+              <h2>obtenerImpuestos()| currency:'DOP ':'2.2-4'</h2>
+            </td>
+          </tr>
+          <tr class="tabletitle">
+            <td></td>
+            <td class="Rate">
+              <h2>Total</h2>
+            </td>
+            <td class="payment">
+              <h2>obtenerTotal()| currency:'DOP ':'2.2-4'</h2>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="legalcopy">
+        <p class="legal">
+          <strong>Gracias por comprar en nuestro negocio!</strong>Revise el tipo NCF de Factura y Condición fisica del
+          producto.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div> -->

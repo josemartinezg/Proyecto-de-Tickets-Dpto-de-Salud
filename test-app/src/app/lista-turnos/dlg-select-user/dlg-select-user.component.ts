@@ -25,7 +25,89 @@ export class DlgSelectUserComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService,
   public wsService: WebsocketService) {}
 
+  print() {
+    let printContents, popupWin;
+    let titulo = "this.config.empresa;"
+    printContents = document.getElementById('print-section').innerHTML;
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=600%,width=600%');
+    popupWin.document.open();
+    popupWin.document.write(`
+      <html>
+        <head>
+          <title>${titulo}</title>
+          <style>
+          h1{ 
+            font-size: 1.8em;
+            color: #222;
+          }
+          h2{font-size: 1.1em;}
+          h3{
+            font-size: 1.2em;
+            font-weight: 300;
+            line-height: 2em;
+          }
+          p{
+            font-size: 1em;
+            color: #222;
+            line-height: 1.5em;
+          }
 
+          #top, #mid,#bot{ /* Targets all id with 'col-' */
+            border-bottom: 2.4px solid #222;
+          }
+          #top{min-height: 100px;}
+          #mid{min-height: 80px;}
+          #bot{ min-height: 50px;}
+          #top .logo{
+            //float: left;
+              height: 60px;
+              width: 60px;
+              background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
+              background-size: 60px 60px;
+          }
+          .clientlogo{
+            float: left;
+              height: 60px;
+              width: 60px;
+              background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+              background-size: 60px 60px;
+            border-radius: 50px;
+          }
+          .info{
+            display: block;
+            float:left;
+            margin-left: 0;
+          }
+          .title{
+            float: right;
+          }
+          .title p{text-align: right;}
+          table{
+            width: 100%;
+            border-collapse: collapse;
+          }
+          td{
+            //padding: 5px 0 5px 15px;
+            //border: 1px solid #EEE
+          }
+          .tabletitle{
+            //padding: 5px;
+            font-size: .9em;
+            background: #222;
+          }
+          .service{border-bottom: 2.2px solid #222;}
+          .item{width: 27mm;}
+          .itemtext{font-size: .8em;}
+          #legalcopy{
+            margin-top: 5mm;
+          }
+          </style>
+        </head>
+    <body onload="window.print();window.close()">${printContents}</body>
+      </html>`
+    );
+    popupWin.document.close();
+  }
     onClick(puestoSeleccionado){
       console.log(this.data.turno);
       this.turnoService.createTurno(this.data.turno, puestoSeleccionado)
@@ -33,7 +115,9 @@ export class DlgSelectUserComponent implements OnInit {
         turno => {
           console.log(turno);
         }
+        
       );
+      //this.print();
     }
   
 
