@@ -16,7 +16,7 @@ export class TurnosHoy{
                 case "Piscina":
                         this.codigo = "PSC00"+count; 
                 break;
-                case "Certificación Médica":
+                case "Certificacion Medica":
                         this.codigo = "CFM00"+count; 
                 break;
                 case "Emergencia":

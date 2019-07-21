@@ -5,6 +5,7 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { TurnosHoy } from '../components/tipo-turno-btn/TurnosHoy';
 import { WebsocketService } from './websocket.service';
 import {tap} from 'rxjs/operators';
+import { Globals } from '../../globals';
 
 var count = 0;
 @Injectable({
@@ -12,7 +13,8 @@ var count = 0;
 })
 export class TurnoService {
   
-  url:string = 'http://localhost:3000/api/turnos';
+  url:string;
+  relation: string = 'turnos';
   limitUsuario = '?filter[where][or][0][estado_id]=1&filter[where][or][1][estado_id]=2';
   limitActual = '?filter[where][estado_id]=3&filter[limit]=1';
   limitLlamada = '?filter[where][estado_id]=2&filter[limit]=1';
@@ -20,7 +22,10 @@ export class TurnoService {
   // private turnoActualTest = new BehaviorSubject<string>('john');
   // cast = this.turnoActualTest.asObservable();
   
-  constructor(private http:HttpClient, public wsService: WebsocketService) { }
+  constructor(private http:HttpClient, private glob: Globals, public wsService: WebsocketService) { 
+    this.url = this.glob.SERVER_URL + this.relation; 
+    //http://localhost:3000/api/turnos
+  }
 
   get refreshNeeded$(){
     return this._refreshNeeded$;

@@ -9,6 +9,7 @@ import { SelectUserComponent } from "../../lista-turnos/select-user/select-user.
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { createAotUrlResolver } from '@angular/compiler';
 import { Consulta } from '../../models/Consulta';
+import { Globals } from 'src/globals';
 
 var count = 0;
 
@@ -27,11 +28,13 @@ export class TipoTurnoBtnComponent implements OnInit {
   buttonName = 'Estudiante';
   misTurnos:TurnosHoy[];
 
-  url = 'http://localhost:3000/api/turnos';
-  constructor(private service: TipoTurnoBtnService, private turnoService: TurnoService, private http: HttpClient, public dialog: MatDialog) { 
+  url:string;
+  relation: string = 'turnos';
+  constructor(private service: TipoTurnoBtnService, private turnoService: TurnoService, 
+    private http: HttpClient, public dialog: MatDialog, private glob: Globals) { 
     /*Cuando se le pone este parámetro al constructor se desacopla,
      el servicio del componente, que es lo que queremos. */
-    //this.turnos = service.getTipoTurnoAlt(); 
+    this.url = this.glob.SERVER_URL + this.relation;  
     this.service.getTipoTurnoAlt().subscribe(turnoActual => {
       this.turnos = turnoActual; 
     });

@@ -48,6 +48,7 @@ import { TurnosAdminComponent } from './admin/turnos-admin/turnos-admin.componen
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
 import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
+import { Globals } from '../globals';
 
 
 
@@ -119,6 +120,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
   ],
   providers: [
     TipoTurnoBtnService,
+    Globals,
     AuthService
   ],
   bootstrap: [AppComponent]

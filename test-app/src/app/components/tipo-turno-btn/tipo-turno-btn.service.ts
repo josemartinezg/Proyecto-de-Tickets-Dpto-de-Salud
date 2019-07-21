@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Consulta } from '../../models/Consulta';
 import { HttpClient } from '@angular/common/http';
+import { Globals } from 'src/globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoTurnoBtnService {
-  url:string = 'http://localhost:3000/api/consultas';
+  url:string;
+  relation: string = 'consultas';
+  
 
-  constructor(private http:HttpClient){
-
+  constructor(private http:HttpClient, private glob: Globals) { 
+    this.url = this.glob.SERVER_URL + this.relation; 
   }
   getTipoTurno(){
     return ['Estudiante', 'Empleado', 'Contratista','Piscina','Certificación Médica','Emergencia'];
