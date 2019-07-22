@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Registrar Estado</h2>
+<form class="form-estado" #formEstado="ngForm" >
+<mat-dialog-content>
+                <input type="hidden" id="id" name="id" class="form-control"  placeholder="Id" [(ngModel)]="this.estadoService.selectedEstado.id">
+        <div >
+                <input type="text" id="nombreEstado" name="nombre_estado" class="form-control"  placeholder="Estado" [(ngModel)]="this.estadoService.selectedEstado.nombre_estado">
+                
+        </div>
+    
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onSaveEstado(formEstado)">Salvar Estado</button>
+</mat-dialog-actions>
+
+</form>

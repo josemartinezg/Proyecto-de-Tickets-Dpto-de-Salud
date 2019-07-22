@@ -1,3 +1,4 @@
+import { EstadoService } from './services/estado.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -48,7 +49,9 @@ import { TurnosAdminComponent } from './admin/turnos-admin/turnos-admin.componen
 import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.component';
 import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
 import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
-import { Globals } from '../globals';
+import { ModalComponent } from './admin/components/modal/modal.component';
+import { Globals } from 'src/globals';
+
 
 
 
@@ -116,10 +119,13 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
 
   ],
   entryComponents: [
-    DlgSelectUserComponent
+    DlgSelectUserComponent,
+    ModalComponent
   ],
   providers: [
     TipoTurnoBtnService,
+    AuthService,
+    EstadoService,
     Globals,
     AuthService
   ],

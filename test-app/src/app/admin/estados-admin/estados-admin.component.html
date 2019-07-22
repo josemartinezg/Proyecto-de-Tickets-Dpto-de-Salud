@@ -1,4 +1,35 @@
 <sidebar>
-        <p>estados-admin works!</p>
-</sidebar>
 
+        <div class="">
+                <div class="col">
+                        <button mat-button (click)="onCreate()" (click)="resetForm()" >Añadir<mat-icon>add</mat-icon></button>
+                        <table class="table table-hover">
+                                <thead>
+                                        <tr>
+                                                <th>Id Estado</th>
+                                                <th>Nombre Estado</th>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor="let estado of estados">
+                                                <td>{{estado.id}}</td>
+                                                <td>{{estado.nombre_estado}}</td>
+                                                <td><button mat-button>
+                                                                <mat-icon (click)="onPreUpdateEstado(estado)" (click)="onCreate()">edit</mat-icon>
+                                                        </button></td>
+                                                <td><button mat-button (click)=onDeleteEstado(estado.id)>
+                                                                <mat-icon>delete</mat-icon>
+                                                        </button></td>
+                                        </tr>
+
+                                </tbody>
+
+                        </table>
+                </div>
+        </div>
+
+      
+
+</sidebar>
