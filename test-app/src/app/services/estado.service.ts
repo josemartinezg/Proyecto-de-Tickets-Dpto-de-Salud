@@ -41,7 +41,7 @@ export class EstadoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3000/api/estados?access_token=${token}';
+    const url = 'http://localhost:3100/api/estados?access_token=${token}';
     return this.http.post<EstadoInterface>(url, estado,{headers: this.headers}).pipe(map(data => data));
   }
 
@@ -49,7 +49,7 @@ export class EstadoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3000/api/estados?access_token=${token}';
+    const url = 'http://localhost:3100/api/estados?access_token=${token}';
     return this.http.put<EstadoInterface>(url, estado,{headers: this.headers}).pipe(map(data => data));
   }
 
@@ -57,7 +57,7 @@ export class EstadoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3000/api/estados/'+ id +'?access_token=${token}';
+    const url = 'http://localhost:3100/api/estados/'+ id +'?access_token=${token}';
     return this.http.delete<EstadoInterface>(url,{headers: this.headers}).pipe(map(data => data));
   }
 }

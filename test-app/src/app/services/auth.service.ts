@@ -14,7 +14,9 @@ export class AuthService {
   url:string;
   relation: string = 'Users/'
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private glob: Globals) {
+    this.url = this.glob.SERVER_URL + this.relation;
+  }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type":"aplication/json"
   });
