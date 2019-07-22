@@ -20,9 +20,12 @@ import {MatInputModule} from '@angular/material';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 import { PuestoAdminComponent } from './puesto-admin/puesto-admin.component';
 import { EstadosAdminComponent } from './estados-admin/estados-admin.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [DashboardComponent, SidebarComponent,TurnosAdminComponent, UsuariosAdminComponent, PuestoAdminComponent, EstadosAdminComponent],
+  declarations: [DashboardComponent, SidebarComponent,TurnosAdminComponent, UsuariosAdminComponent, PuestoAdminComponent, EstadosAdminComponent, ModalComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -39,9 +42,12 @@ import { EstadosAdminComponent } from './estados-admin/estados-admin.component';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ModalModule,
+    MatDialogModule
     
-  ]
+  ],
+ 
 
   
 })
