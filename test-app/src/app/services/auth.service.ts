@@ -4,11 +4,15 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/Usuario';
 import { isNullOrUndefined } from 'util';
+import { Globals } from '../../globals';
+import { GeneralConfig } from '../../app/pro_config';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  url:string = 'http://localhost:3000/api/Users/';
+  /*Probar */
+  url:string;
+  relation: string = 'Users/'
 
   constructor(private http: HttpClient) {}
   headers: HttpHeaders = new HttpHeaders({
@@ -22,6 +26,8 @@ export class AuthService {
 
    getToken(){
      return localStorage.getItem("token");
+  /*constructor(private http: HttpClient, private glob: Globals) {
+    this.url = this.glob.SERVER_URL + this.relation;*/
    }
 
    login(model:any){

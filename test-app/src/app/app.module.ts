@@ -50,6 +50,8 @@ import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.co
 import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
 import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
 import { ModalComponent } from './admin/components/modal/modal.component';
+import { Globals } from 'src/globals';
+
 
 
 
@@ -123,7 +125,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
   providers: [
     TipoTurnoBtnService,
     AuthService,
-    EstadoService
+    EstadoService,
+    Globals,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

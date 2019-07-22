@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { TurnosHoy } from '../../components/tipo-turno-btn/TurnosHoy';
 import { HttpClient } from '@angular/common/http';
+import { Globals } from 'src/globals';
 @Component({
   selector: 'btn-aceptar',
   templateUrl: './btn-aceptar.component.html',
@@ -13,8 +14,11 @@ export class BtnAceptarComponent implements OnInit {
   isEnabled: boolean = false;
   response: any;
   misTurnos:TurnosHoy[];
-  url = 'http://localhost:3000/api/turnos';
-  constructor(private http: HttpClient) { }
+  url:string;
+  relation: string = 'turnos';
+  constructor(private http: HttpClient,  private glob: Globals) { 
+    this.url = this.glob.SERVER_URL + this.relation;
+  }
 
   ngOnInit() {
   }
