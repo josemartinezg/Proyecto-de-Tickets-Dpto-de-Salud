@@ -33,7 +33,7 @@ export class EstadoService {
 
   
   getAllEstados(){
-    
+  
     return this.http.get(this.url);
   }
 
