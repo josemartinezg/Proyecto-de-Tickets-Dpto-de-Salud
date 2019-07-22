@@ -55,6 +55,7 @@ import { Globals } from 'src/globals';
 
 
 
+
 const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
     DlgSelectUserComponent,
     SelectUserComponent,
     RegistroUsuariosComponent,
+
     
   
 

@@ -4,15 +4,21 @@ import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { EstadoInterface } from'../models/Estado-interface';
 import { Observable } from 'rxjs';
+import { Globals } from 'src/globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstadoService {
+  url: string;
+  relation: string = 'estados';
 
-  constructor(private http: HttpClient, private authService : AuthService) { }
+  constructor(private http: HttpClient, private glob: Globals, private authService : AuthService) { 
+    this.url = this.glob.SERVER_URL + this.relation;
+  }
     estados: Observable<any>;
     estado: Observable<any>;
+   
 
     public selectedEstado: EstadoInterface = {
       id:null,
@@ -27,8 +33,8 @@ export class EstadoService {
 
   
   getAllEstados(){
-    const url = 'http://localhost:3000/api/estados';
-    return this.http.get(url);
+    
+    return this.http.get(this.url);
   }
 
   saveEstado(estado: EstadoInterface){
