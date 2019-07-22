@@ -29,7 +29,7 @@ export class TurnosUsuarioAtencionComponent implements AfterViewInit, OnInit {
   constructor(private turnoServices: TurnoService){
 
   }
-  
+
 
   ngOnInit() {
     this.updateSubscription = interval(1000).subscribe(
@@ -74,7 +74,7 @@ private updateStats() {
       (turnos: Turno[]) => this.misTurnos = turnos);
   }
   ngAfterViewInit() {
-   
+
   }
 
 }
