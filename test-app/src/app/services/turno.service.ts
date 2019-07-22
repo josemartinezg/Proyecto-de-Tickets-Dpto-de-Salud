@@ -18,6 +18,8 @@ export class TurnoService {
   limitUsuario = '?filter[where][or][0][estado_id]=1&filter[where][or][1][estado_id]=2';
   limitActual = '?filter[where][estado_id]=3&filter[limit]=1';
   limitLlamada = '?filter[where][estado_id]=2&filter[limit]=1';
+  limitEspera1 = '?filter[where][and][0][estado_id]=1&filter[where][and][1][no_puesto]=1';
+  limitEspera2 = '?filter[where][and][0][estado_id]=1&filter[where][and][1][no_puesto]=2';
   private _refreshNeeded$ = new Subject<void>();
   // private turnoActualTest = new BehaviorSubject<string>('john');
   // cast = this.turnoActualTest.asObservable();
@@ -42,7 +44,15 @@ export class TurnoService {
   getTurnosLlamada():Observable<Turno[]>{
     return this.http.get<Turno[]>(this.url + this.limitLlamada);
   }
-  
+
+  getTurnosEstado1():Observable<Turno[]>{
+    return this.http.get<Turno[]>(this.url + this.limitEspera1);
+  }
+
+  getTurnosEstado2():Observable<Turno[]>{
+    return this.http.get<Turno[]>(this.url + this.limitEspera2);
+  }
+
   generarTurno(turno, puesto){
 
     count++;
