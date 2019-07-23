@@ -106,7 +106,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
-      { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard]},
+      { path: 'admin', component: DashboardComponent},
       { path: 'turnos-admin', component: TurnosAdminComponent},
       { path: 'usuarios-admin', component: UsuariosAdminComponent},
       { path: 'estados-admin', component: EstadosAdminComponent},

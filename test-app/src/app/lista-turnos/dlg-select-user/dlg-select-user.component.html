@@ -21,7 +21,7 @@
 <div>Puesto seleccionado: {{puestoSeleccionado}}</div>
 <div class="container">
   <mat-card-actions>
-  <button mat-raised-button
+  <button mat-raised-button (click) ='onOtherClick()'
   color="primary">Auto</button>
   <button mat-raised-button mat-dialog-close
   (click)='onClick(puestoSeleccionado)'

@@ -113,6 +113,7 @@ export class DlgSelectUserComponent implements OnInit {
     popupWin.document.close();
   }
     onClick(puestoSeleccionado){
+      
       console.log(this.data.turno);
       this.turnoService.createTurno(this.data.turno, puestoSeleccionado)
       .subscribe(
@@ -125,10 +126,13 @@ export class DlgSelectUserComponent implements OnInit {
     }
 
     onOtherClick(){
+      
       this.turnoService.getTurnosEstado1().subscribe(misTurnos1 => {this.misTurnos1 = misTurnos1
       console.log(misTurnos1)});
       this.turnoService.getTurnosEstado2().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
       console.log(misTurnos2)}); 
+      
+      this.fuckThisShit();
       
     }
   
@@ -141,7 +145,8 @@ export class DlgSelectUserComponent implements OnInit {
     
   }
 
-  fuckThisShit(){
+   fuckThisShit(){
+    
     if(this.misTurnos1.length < this.misTurnos2.length){
       this.turnoService.createTurno(this.data.turno, "1");
     }else{
