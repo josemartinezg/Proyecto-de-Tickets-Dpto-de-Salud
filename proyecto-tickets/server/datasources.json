@@ -5,10 +5,10 @@
   },
   "postgre1": {
     "host": "localhost",
-    "port": 5433,
+    "port": 5432,
     "url": "",
     "database": "postgres",
-    "password": "0597",
+    "password": "12345678",
     "name": "postgre1",
     "user": "postgres",
     "connector": "postgresql"
