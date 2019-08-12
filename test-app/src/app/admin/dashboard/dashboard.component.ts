@@ -23,8 +23,8 @@ export class DashboardComponent implements OnInit {
   }
 
    getDashboard(){
-    const METABASE_SITE_URL = "http://192.168.77.9:3000";
-    const METABASE_SECRET_KEY = "0cc00d60df570a4e769a663e4691e825c004bef669c39acb2174feb6a1e0cefb";
+    const METABASE_SITE_URL = "http://localhost:3000";
+    const METABASE_SECRET_KEY = "7408c543ef16470cbf2ffdf126aa73347d622e3d05ec8d2d65d40ed41537be95";
 
      const payload = {
       resource: { dashboard: 1 },
