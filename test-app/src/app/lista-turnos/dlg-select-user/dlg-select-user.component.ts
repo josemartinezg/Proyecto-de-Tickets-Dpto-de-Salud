@@ -125,14 +125,19 @@ export class DlgSelectUserComponent implements OnInit {
     }
 
     onOtherClick(){
+      //Extracción de los turnos asignados al puesto 1.
       this.turnoService.getTurnosEstado1().subscribe(misTurnos1 => {this.misTurnos1 = misTurnos1
       console.log(misTurnos1)});
+      //Extracción de los turnos asignados al puesto 2.
       this.turnoService.getTurnosEstado2().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
-      console.log(misTurnos2)}); 
+      console.log(misTurnos2)});
+      //Ejecución de la función que compara la cantidad de turnos asignados a cada puesto y en estado activo...
+      //... falla por el delay del método subscribe, y cuando existe un delay, javacript ejecuta de inmediato el proximo código...
+      //.. cuando quiere contar la cantidad de turnos, el arreglo de turnos todavía no se ha extraído. 
+      this.fuckThisShit();
       
     }
   
-
   onNoClick(): void {
     this.dialogRef.close();
   }
