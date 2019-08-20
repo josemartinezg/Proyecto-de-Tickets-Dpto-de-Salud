@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { QzTrayService } from 'src/app/services/qz-tray.service';
 
 @Component({
   selector: 'navbar',
@@ -9,11 +10,14 @@ export class NavbarComponent implements OnInit {
   
   @Input() tituloNavBar: string;
 
-  constructor() { 
+  constructor(private printService: QzTrayService) { 
    
   }
 
   ngOnInit() {
   }
-
+  onClickList(){
+    this.printService.getPrinters();
+    console.log();
+  }
 }

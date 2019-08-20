@@ -27,7 +27,9 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jsonwebtoken/index.js"
+              "node_modules/jsonwebtoken/index.js",
+              "node_modules/qz-tray/qz-tray.js",
+              "node_modules/rsvp/lib/rsvp.js"
             ]
           },
           "configurations": {

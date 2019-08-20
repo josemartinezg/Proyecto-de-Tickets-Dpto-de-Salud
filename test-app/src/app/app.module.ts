@@ -52,6 +52,7 @@ import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.componen
 import { ModalComponent } from './admin/components/modal/modal.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { Globals } from 'src/globals';
+import { PrinterMenuComponent } from './printer-menu/printer-menu.component';
 
 
 const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
@@ -71,6 +72,7 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
     DlgSelectUserComponent,
     SelectUserComponent,
     RegistroUsuariosComponent,
+    PrinterMenuComponent,
 
     
   

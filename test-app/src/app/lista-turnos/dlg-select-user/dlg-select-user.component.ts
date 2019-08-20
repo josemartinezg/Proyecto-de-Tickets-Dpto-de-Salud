@@ -4,6 +4,7 @@ import { Puesto } from "../../models/Puesto";
 import { TurnoService } from 'src/app/services/turno.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { Subscription, interval } from 'rxjs';
+import { QzTrayService } from '../../services/qz-tray.service';
 import { Turno } from 'src/app/models/Turno';
 
 export interface DialogData{
@@ -27,7 +28,7 @@ export class DlgSelectUserComponent implements OnInit {
   
 
   constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService,
-  public wsService: WebsocketService) {}
+  public wsService: WebsocketService, private printService: QzTrayService) {}
 
   print() {
     let printContents, popupWin;
@@ -120,8 +121,8 @@ export class DlgSelectUserComponent implements OnInit {
         turno => {
           console.log(turno);
         }
-        
       );
+      //this.printService.printData();
       //this.print();
     }
 
