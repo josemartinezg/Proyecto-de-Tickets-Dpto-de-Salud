@@ -5,6 +5,7 @@ import { TurnoService } from 'src/app/services/turno.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { Subscription, interval } from 'rxjs';
 import { Turno } from 'src/app/models/Turno';
+import { resolve } from 'url';
 
 export interface DialogData{
   perro: String;
@@ -129,7 +130,15 @@ export class DlgSelectUserComponent implements OnInit {
       console.log(misTurnos1)});
       this.turnoService.getTurnosEstado2().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
       console.log(misTurnos2)}); 
-      
+      setTimeout(this.fuckThisShit, 2000);
+    }
+    
+    fuckThisShit(){
+      if(this.misTurnos1.length < this.misTurnos2.length){
+        this.turnoService.createTurno(this.data.turno, "1");
+      }else{
+        this.turnoService.createTurno(this.data.turno, "2");
+      }
     }
   
 
@@ -141,13 +150,7 @@ export class DlgSelectUserComponent implements OnInit {
     
   }
 
-  fuckThisShit(){
-    if(this.misTurnos1.length < this.misTurnos2.length){
-      this.turnoService.createTurno(this.data.turno, "1");
-    }else{
-      this.turnoService.createTurno(this.data.turno, "2");
-    }
-  }
+  
 
   ngOnInit() {}
 }
