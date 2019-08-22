@@ -138,10 +138,9 @@ export class DlgSelectUserComponent implements OnInit {
         this.turnoService.createTurno(this.data.turno, "1");
       }else{
         this.turnoService.createTurno(this.data.turno, "2");
-      }
+      }      
     }
   
-
   onNoClick(): void {
     this.dialogRef.close();
   }
