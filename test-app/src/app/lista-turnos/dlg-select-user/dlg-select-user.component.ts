@@ -129,9 +129,9 @@ export class DlgSelectUserComponent implements OnInit {
       const TmisTurnos1 = this.turnoService.getTurnosEstado1().subscribe(misTurnos1 => {this.misTurnos1 = misTurnos1
       console.log(misTurnos1)
       misTurnos1.reduce((a,obj) => a + Object.keys(obj).length, 0)});
-      const TmisTurnos2 = this.turnoService.getTurnosEstado1().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
+      const TmisTurnos2 = this.turnoService.getTurnosEstado2().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
       console.log(misTurnos2)
-       misTurnos2.reduce((a,obj) => a + Object.keys(obj).length, 0)});
+      misTurnos2.reduce((a,obj) => a + Object.keys(obj).length, 0)});
       //const TmisTurnos1 = this.misTurnos1.reduce((a, obj) => a + Object.keys(obj).length, 0);
       //const TmisTurnos2 = this.misTurnos2.reduce((a, obj) => a + Object.keys(obj).length, 0);
       //setTimeout(, 2000);
@@ -139,7 +139,8 @@ export class DlgSelectUserComponent implements OnInit {
     }
     
     fuckThisShit(TmisTurnos1: any, TmisTurnos2: any){
-      
+      console.log(TmisTurnos1);
+      console.log(TmisTurnos2);
       if(TmisTurnos1 < TmisTurnos2){
         this.turnoService.createTurno(this.data.turno, "1");
       }else{
