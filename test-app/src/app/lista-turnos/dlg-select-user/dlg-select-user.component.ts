@@ -139,8 +139,8 @@ export class DlgSelectUserComponent implements OnInit {
     }
     
     fuckThisShit(TmisTurnos1: any, TmisTurnos2: any){
-      console.log(TmisTurnos1);
-      console.log(TmisTurnos2);
+      console.log("Entraste a la funcion");
+     // console.log(TmisTurnos2);
       if(TmisTurnos1 < TmisTurnos2){
         this.turnoService.createTurno(this.data.turno, "1");
       }else{
