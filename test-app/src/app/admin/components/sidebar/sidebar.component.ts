@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   fillerNav = [
     {name:" Dashboard",route:"/admin",icon:"dashboard"},
     {name:" Turnos",route:"/turnos-admin",icon:"event"},
+    {name:" Tipo Turno",route:"/tipoturno-admin",icon:"format_list_bulleted"},
     {name:" Usuarios",route:"/usuarios-admin",icon:"supervised_user_circle"},
     {name:" Puestos",route:"/puestos-admin",icon:"transfer_within_a_station"},
     {name:" Estados",route:"/estados-admin",icon:"refresh"}

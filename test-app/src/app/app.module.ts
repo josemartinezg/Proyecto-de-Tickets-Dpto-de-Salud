@@ -1,3 +1,5 @@
+import { ModalTipoTurnoComponent } from './admin/components/modal-tipo-turno/modal-tipo-turno.component';
+import { TipoturnoAdminComponent } from './admin/tipoturno-admin/tipoturno-admin.component';
 import { EstadoService } from './services/estado.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -110,7 +112,8 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
       { path: 'turnos-admin', component: TurnosAdminComponent},
       { path: 'usuarios-admin', component: UsuariosAdminComponent},
       { path: 'estados-admin', component: EstadosAdminComponent},
-      { path: 'puestos-admin', component: PuestoAdminComponent}
+      { path: 'puestos-admin', component: PuestoAdminComponent},
+      { path: 'tipoturno-admin', component: TipoturnoAdminComponent}
 
       
       
@@ -120,7 +123,8 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
   ],
   entryComponents: [
     DlgSelectUserComponent,
-    ModalComponent
+    ModalComponent,
+    ModalTipoTurnoComponent 
   ],
   providers: [
     TipoTurnoBtnService,

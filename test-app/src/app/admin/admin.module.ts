@@ -23,9 +23,11 @@ import { EstadosAdminComponent } from './estados-admin/estados-admin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ModalTipoTurnoComponent } from './components/modal-tipo-turno/modal-tipo-turno.component';
+import { TipoturnoAdminComponent } from './tipoturno-admin/tipoturno-admin.component';
 
 @NgModule({
-  declarations: [DashboardComponent, SidebarComponent,TurnosAdminComponent, UsuariosAdminComponent, PuestoAdminComponent, EstadosAdminComponent, ModalComponent],
+  declarations: [DashboardComponent, SidebarComponent,TurnosAdminComponent, UsuariosAdminComponent, PuestoAdminComponent, EstadosAdminComponent, ModalComponent, ModalTipoTurnoComponent,TipoturnoAdminComponent],
   imports: [
     CommonModule,
     MatToolbarModule,

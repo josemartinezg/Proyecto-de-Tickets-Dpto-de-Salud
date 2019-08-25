@@ -1,26 +1,28 @@
 <sidebar>
 
         <div class="container">
-                <h1>Estados</h1>
+                <h1>Tipo Turno</h1>
                 <div class="col">
                         <button mat-button (click)="onCreate()" (click)="resetForm()" >Añadir<mat-icon>add</mat-icon></button>
                         <table class="table table-striped">
                                 <thead>
                                         <tr>
-                                                <th>Id Estado</th>
-                                                <th>Nombre Estado</th>
+                                                <th>Id Tipo</th>
+                                                <th>Nombre Tipo</th>
+                                                <th>Estado</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                         </tr>
                                 </thead>
                                 <tbody>
-                                        <tr *ngFor="let estado of estados">
-                                                <td>{{estado.id}}</td>
-                                                <td>{{estado.nombre_estado}}</td>
+                                        <tr *ngFor="let tipoturno of tipoTurnos">
+                                                <td>{{tipoturno.id}}</td>
+                                                <td>{{tipoturno.tipo_consulta}}</td>
+                                                <td>{{tipoturno.activo == true? 'Disponible' : 'No Disponible' }}</td>
                                                 <td><button mat-button>
-                                                                <mat-icon (click)="onPreUpdateEstado(estado)" (click)="onCreate()">edit</mat-icon>
+                                                                <mat-icon (click)="onPreUpdateTipoTurno(tipoturno)" (click)="onCreate()">edit</mat-icon>
                                                         </button></td>
-                                                <td><button mat-button (click)=onDeleteEstado(estado.id)>
+                                                <td><button mat-button (click)=onDeleteTipoTurno(tipoturno.id)>
                                                                 <mat-icon>delete</mat-icon>
                                                         </button></td>
                                         </tr>
