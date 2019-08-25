@@ -5,8 +5,7 @@
 <div>
   <turno-actual *ngFor="let turno of turnoActual" [turno]="turno"></turno-actual>
 </div>
-<div class="mat-elevation-z8 data-table"
-  class="container">
+<div class="mat-elevation-z8 data-table">
   <!-- fxLayoutAlign="center" --> 
   <table [dataSource]="misTurnos" mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- Id Column -->
