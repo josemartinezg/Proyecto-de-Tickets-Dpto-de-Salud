@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
   
   @Input() tituloNavBar: string;
   title = 'app';
-	printerName = "Microsoft Print to PDF";
+	printerName = "Generic / Text Only";
   constructor(private printService: QzTrayService) { 
   }
 

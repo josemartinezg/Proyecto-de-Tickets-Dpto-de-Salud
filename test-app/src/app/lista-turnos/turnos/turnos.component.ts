@@ -27,6 +27,7 @@ export class TurnosComponent implements OnInit {
       (val) => { this.turnoService.getTurnos().subscribe(
         turnos => {
           this.misTurnos = turnos;
+          
         }
       )
       });
@@ -47,5 +48,13 @@ export class TurnosComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.open(DlgTurnoLlamadoComponent);
+  }
+
+  isSelected(turno){
+    if (turno.estado_id == 2){
+      return 'turnoActivo';
+    }else{
+      return 'turno';
+    }
   }
 }

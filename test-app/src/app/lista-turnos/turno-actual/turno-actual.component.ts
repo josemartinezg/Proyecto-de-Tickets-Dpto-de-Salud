@@ -13,7 +13,7 @@ export class TurnoActualComponent implements OnInit {
   @Input() idTurno: String;
   @Input() turno: Turno;
   @Input() disabled: boolean;
-  isEnabled: boolean = false;
+ // isEnabled: boolean = false;
   response: any;
   misTurnos:TurnosHoy[];
   url: string;
@@ -26,7 +26,7 @@ export class TurnoActualComponent implements OnInit {
   ngOnInit() {
   }
   onClick(){
-    this.isEnabled = !this.isEnabled;
+    //  this.isEnabled = !this.isEnabled;
     var route: string = "/" + this.turno.id;
     var turnoHoy = new TurnosHoy();
     var dateTime = turnoHoy.getDate();

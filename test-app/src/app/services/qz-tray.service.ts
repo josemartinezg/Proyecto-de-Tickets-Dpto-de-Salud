@@ -76,10 +76,10 @@ export class QzTrayService {
 	}
   // Print data to chosen printer
 	printData(printer: string, data: any): Observable<any> {
-		qz.printers.find("Microsoft Print To PDF").then(function(found) {
+		qz.printers.find("Generic / Text Only").then(function(found) {
 			console.log("Printer: " + found);
 			
-			var config = qz.configs.create("Microsoft Print To PDF");               // Exact printer name from OS
+			var config = qz.configs.create("Generic / Text Only");               // Exact printer name from OS
 			var data = ['^XA^FO50,50^ADN,36,20^FDRAW ZPL EXAMPLE^FS^XZ'];   // Raw commands (ZPL provided)
 			
 			qz.print(config, data).then(function() {
