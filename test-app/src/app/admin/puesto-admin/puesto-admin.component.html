@@ -1,3 +1,29 @@
 <sidebar>
-        <p>puesto-admin works!</p>
+
+        <div class="container">
+                <h1>Puestos</h1>
+                <div class="col">
+                        <table class="table table-striped">
+                                <thead>
+                                        <tr>
+                                                <th>Id Puesto</th>
+                                                <th>Numero Puesto</th>
+                                                <th>Disponibilidad</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor="let puesto of puestos">
+                                                <td>{{puesto.id}}</td>
+                                                <td>{{puesto.num_puesto}}</td>
+                                                <td>{{puesto.disponible == true? 'Disponible':'No disponible'}}</td>
+                                        </tr>
+
+                                </tbody>
+
+                        </table>
+                </div>
+        </div>
+
+      
+
 </sidebar>

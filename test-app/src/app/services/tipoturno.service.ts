@@ -40,7 +40,7 @@ export class TipoturnoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3100/api/consultas?access_token=${token}';
+    const url = this.url +'?access_token=${token}';
     return this.http.post<TipoTurnoInterface>(url, tipoTurno,{headers: this.headers}).pipe(map(data => data));
   }
 
@@ -48,7 +48,7 @@ export class TipoturnoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3100/api/consultas?access_token=${token}';
+    const url = this.url +'?access_token=${token}';
     return this.http.put<TipoTurnoInterface>(url, tipoTurno,{headers: this.headers}).pipe(map(data => data));
   }
 
@@ -56,7 +56,7 @@ export class TipoturnoService {
     //TODO: obtener token
     //TODO: not null
     let token = this.authService.getToken();
-    const url = 'http://localhost:3100/api/consultas/'+ id +'?access_token=${token}';
+    const url = this.url + id +'?access_token=${token}';
     return this.http.delete<TipoTurnoInterface>(url,{headers: this.headers}).pipe(map(data => data));
   }
 
