@@ -3,19 +3,23 @@
         <div class="container">
                 <h1>Puestos</h1>
                 <div class="col">
+                                <!-- <button mat-button (click)="onCreate()" (click)="resetForm()" >Añadir<mat-icon>add</mat-icon></button> -->
                         <table class="table table-striped">
                                 <thead>
-                                        <tr>
-                                                <th>Id Puesto</th>
+                                        <tr> 
                                                 <th>Numero Puesto</th>
                                                 <th>Disponibilidad</th>
+                                                <th>Eliminar</th>
                                         </tr>
                                 </thead>
                                 <tbody>
                                         <tr *ngFor="let puesto of puestos">
-                                                <td>{{puesto.id}}</td>
+                                                    
                                                 <td>{{puesto.num_puesto}}</td>
                                                 <td>{{puesto.disponible == true? 'Disponible':'No disponible'}}</td>
+                                                <td><button mat-button (click)=onDeletePuesto(puesto.id)>
+                                                                <mat-icon>delete</mat-icon>
+                                                        </button></td>
                                         </tr>
 
                                 </tbody>

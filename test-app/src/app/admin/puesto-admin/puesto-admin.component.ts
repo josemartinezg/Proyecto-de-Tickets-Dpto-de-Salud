@@ -24,4 +24,11 @@ export class PuestoAdminComponent implements OnInit {
 
   }
 
+  onDeletePuesto(id: string): void{ 
+    if(confirm("Estas seguro en eliminar el puesto "+id+"?")) {
+      this.dataApi.deletePuesto(id).subscribe();
+      window.location.reload();
+    }
+  }
+
 }

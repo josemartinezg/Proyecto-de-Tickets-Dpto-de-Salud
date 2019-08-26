@@ -36,5 +36,22 @@ export class PuestoService {
     return this.http.get(this.url);
   }
 
+  savePuesto(puesto: PuestoInterface){
+    //TODO: obtener token
+    //TODO: not null
+    let token = this.authService.getToken();
+    const url = this.url +'?access_token=${token}';
+    return this.http.post<PuestoInterface>(url, puesto,{headers: this.headers}).pipe(map(data => data));
+  }
+
+  deletePuesto(id:string){
+    //TODO: obtener token
+    //TODO: not null
+    let token = this.authService.getToken();
+    const url = this.url + '/'+ id +'?access_token=${token}';
+    return this.http.delete<PuestoInterface>(url,{headers: this.headers}).pipe(map(data => data));
+  }
+
+
 
 }
