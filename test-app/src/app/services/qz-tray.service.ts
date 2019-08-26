@@ -53,7 +53,7 @@ export class QzTrayService {
 					reject(err);
 				}
 			};
-		});
+		});	
 		qz.websocket.connect();
   }
 
