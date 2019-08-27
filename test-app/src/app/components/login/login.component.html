@@ -3,7 +3,7 @@
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
   </mat-card-header>
-  <form #loginForm="ngForm" (ngSumit)="onLogin()">
+  <form #loginForm="ngForm" (ngSumit)="onLogin(loginForm)">
   <mat-card-content>
     <mat-form-field class="example-full-width">
       <input type="email" matInput name="email" placeholder="Email" required [(ngModel)]="user.email">
@@ -13,7 +13,7 @@
     </mat-form-field>
   </mat-card-content>
   <mat-card-actions class="btnr" >
-    <button [disabled]="!loginForm" mat-raised-button (click)="onLogin()" color="primary">Entrar</button>
+    <button [disabled]="!loginForm" mat-raised-button (click)="onLogin(loginForm)" color="primary">Entrar</button>
   </mat-card-actions>
 </form>
 </mat-card>

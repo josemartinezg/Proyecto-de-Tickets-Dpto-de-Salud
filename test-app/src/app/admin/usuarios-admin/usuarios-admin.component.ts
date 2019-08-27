@@ -17,10 +17,10 @@ export class UsuariosAdminComponent {
   dataSource: UsuariosDataSource;
   authService: AuthService;
 
-  private getAllTurnos(){
-    this.authService.getUsers().subscribe(
-      (usuarios: Usuario[]) => this.misUsuarios = usuarios);
-  }
+  // private getAllTurnos(){
+  //   this.authService.getUsers().subscribe(
+  //     (usuarios: Usuario[]) => this.misUsuarios = usuarios);
+  // }
 
   // applyFilter(filterValue: string) {
   //   this.dataSource.filter = filterValue.trim().toLowerCase();

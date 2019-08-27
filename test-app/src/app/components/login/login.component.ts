@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { isError } from 'util';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -13,26 +14,42 @@ import { isError } from 'util';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-
+  public isError = false;
   private user: UserInterface = {
     email: '',
     password: ''
   };  
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onLogin(){
-    return this.authService.loginUser (this.user.email,this.user.password)
-    .subscribe(
-      data =>  {
-          console.log(data);
-      },
-      
-      error => console.log(error)
-      );
+  onLogin(form: NgForm) {
+    if (form.valid) {
+      return this.authService
+        .loginUser(this.user.email, this.user.password)
+        .subscribe(
+        data => {
+          this.authService.setUser(data.user);
+          const token = data.id;
+          this.authService.setToken(token);
+          this.router.navigate(['/admin']);
+          //location.reload();
+          this.isError = false;
+        },
+        error => this.onIsError()
+        );
+    } else {
+      this.onIsError();
+    }
+  }
+
+  onIsError(): void {
+    this.isError = true;
+    setTimeout(() => {
+      this.isError = false;
+    }, 4000);
   }
 
 

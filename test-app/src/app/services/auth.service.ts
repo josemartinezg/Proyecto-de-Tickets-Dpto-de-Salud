@@ -1,5 +1,4 @@
-import { Globals } from '../../globals';
-  
+import { Globals } from '../../globals'; 
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
@@ -22,25 +21,25 @@ export class AuthService {
     "Content-Type":"aplication/json"
   });
 
-  registerUser(name: string, email:string, password:string){
-    const url = this.url;
-    return this.htttp.post<UserInterface>(url,{name,email,password},{headers:this.headers}).pipe(map(data => data));
-  }
+  // registerUser(name: string, email:string, password:string){
+  //   const url = this.url;
+  //   return this.htttp.post<UserInterface>(url,{name,email,password}).pipe(map(data => data));
+  // }
   
   loginUser(email: string, password: string): Observable<any> {
     const url_api = this.url+"login?include=user";
     return this.htttp
-      .post<UserInterface>(
+      .post(
         url_api,
         { email, password },
-        { headers: this.headers }
       )
       .pipe(map(data => data));
   }
 
   setUser(user):void{
+    console.log(user);
     let user_string = JSON.stringify(user);
-    localStorage.setItem('currentUser',user);
+    localStorage.setItem('currentUser',user_string);
   }
 
   setToken(token):void{
@@ -77,7 +76,7 @@ export class AuthService {
   //    return this.htttp.post(this.url + 'login?include=user',model).pipe(
   //      map((response: any) => {
   //        const user = response;
-  //        if(user){
+  //        if(user){ 
   //          this.setToken('token');
   //        }
   //      }) 
@@ -85,11 +84,10 @@ export class AuthService {
   //    )
   //  }
 
-  
 
-  //  register(model:any){
-  //    return this.htttp.post(this.url,model);
-  //  }
+   register(model:any){
+     return this.htttp.post(this.url,model);
+   }
 
 
   
