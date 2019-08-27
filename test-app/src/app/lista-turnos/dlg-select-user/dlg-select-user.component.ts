@@ -27,7 +27,7 @@ export class DlgSelectUserComponent implements OnInit {
   @Output() change = new EventEmitter();
   
 
-  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private turnoService: TurnoService,
+  constructor(public dialogRef: MatDialogRef<DlgSelectUserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public turnoService: TurnoService,
   public wsService: WebsocketService) {}
 
   print() {
@@ -126,6 +126,9 @@ export class DlgSelectUserComponent implements OnInit {
     }
 
     onOtherClick(){
+      const TService = this.turnoService;
+      var TData = this.data;
+      const Close = this.dialogRef;
       this.turnoService.getTurnosEstado1().subscribe(misTurnos1 => {this.misTurnos1 = misTurnos1
       console.log(misTurnos1)
       const TmisTurnos1 = misTurnos1.reduce((a,obj) => a + Object.keys(obj).length, 0)
@@ -136,12 +139,17 @@ export class DlgSelectUserComponent implements OnInit {
         console.log("La otra funcion");
         console.log(TmisTurnos1);
         console.log(TmisTurnos2);
-        if(TmisTurnos1 < TmisTurnos2){
-          this.turnoService.createTurno(this.data.turno, "1");
+        if(TmisTurnos1 <= TmisTurnos2){
+          TService.createTurno(TData.turno, "1").subscribe(
+            turno => {console.log(turno);}
+          );
         }else{
-          this.turnoService.createTurno(this.data.turno, "2");
-        }    
-      }, 2000)})});
+          TService.createTurno(TData.turno, "2").subscribe(
+            turno => {console.log(turno);}
+          );;
+        }
+        Close.close();    
+      }, 1000)})});
       //const TmisTurnos1 = this.misTurnos1.reduce((a, obj) => a + Object.keys(obj).length, 0);
       //const TmisTurnos2 = this.misTurnos2.reduce((a, obj) => a + Object.keys(obj).length, 0);
     }
