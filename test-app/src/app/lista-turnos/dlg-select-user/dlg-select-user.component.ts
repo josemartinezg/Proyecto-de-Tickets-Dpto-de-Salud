@@ -27,7 +27,8 @@ export class DlgSelectUserComponent implements OnInit {
   /* Hasta aqui. */
   turnoIds: string[];
   turnoDetails: Promise<any>[];
-
+  turnoTemp: any;
+  printerName = "Generic / Text Only";
   @Output() change = new EventEmitter();
   
 
@@ -39,8 +40,10 @@ export class DlgSelectUserComponent implements OnInit {
       .subscribe(
         turno => {
           console.log(turno);
+          this.turnoTemp = turno;
         }
       );
+      this.onPrintZPL();
     }
 
     onOtherClick(){
@@ -74,5 +77,14 @@ export class DlgSelectUserComponent implements OnInit {
   isDisabled(){
     return 'disabled';
   }
-
+  onPrintZPL() {
+    var colA = '<p style="font-weight: bold; font-size: 2mm;">Ticket 10001</p>';
+    var colB = '<p>Php 1500.00</p>';
+    var currentDate = new Date();
+    var printData = [
+            { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
+            '\n\n\n\n               Su turno:\n               ' + this.turnoTemp.id_turno + '\n\n\n               Puesto:\n                   ' + this.turnoTemp.no_puesto + '\n\n\n\n\n\n\n\n\n\n\n\n\n'
+        ];    
+    this.printService.printHTML(this.printerName, printData);
+  }
 }

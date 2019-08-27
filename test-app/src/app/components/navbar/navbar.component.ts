@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   
   @Input() tituloNavBar: string;
   title = 'app';
-	printerName = "Generic / Text Only";
+  printerName = "Generic / Text Only";
   constructor(private printService: QzTrayService, private mqService: RabbitmqPrintService) { 
   }
 
