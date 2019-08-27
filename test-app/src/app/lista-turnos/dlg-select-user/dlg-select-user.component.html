@@ -12,9 +12,11 @@
 <mat-radio-group
   aria-labelledby="example-radio-group-label"
   class="example-radio-group"
-   [(ngModel)]="puestoSeleccionado">
-  
-  <mat-radio-button class="example-radio-button" *ngFor="let puesto of puestos" [value]="puesto">
+  [(ngModel)]="puestoSeleccionado">
+  <mat-radio-button class="example-radio-button" 
+  *ngFor="let puesto of puestos" 
+  [value]="puesto"
+  (click)="clickOption()">
     Puesto: {{puesto}}
   </mat-radio-button>
 </mat-radio-group>
@@ -23,7 +25,9 @@
   <mat-card-actions>
   <button mat-raised-button (click) ='onOtherClick()'
   color="primary">Auto</button>
-  <button mat-raised-button mat-dialog-close
+  <button mat-raised-button 
+  [disabled]=!optSelected
+  mat-dialog-close
   (click)='onClick(puestoSeleccionado)'
   >OK</button>
   </mat-card-actions>

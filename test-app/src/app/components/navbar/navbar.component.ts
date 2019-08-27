@@ -16,7 +16,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-		this.mqService.connect();
 		this.printService.initQZ();
 	}
   onPrintHTML() {

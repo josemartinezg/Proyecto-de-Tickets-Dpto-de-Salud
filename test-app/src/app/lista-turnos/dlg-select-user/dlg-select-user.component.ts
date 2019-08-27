@@ -19,11 +19,15 @@ export interface DialogData{
 })
 export class DlgSelectUserComponent implements OnInit {
   puestoSeleccionado: string;
+  /* Cambiar para poder utilizar los puestos que cree el usuario.*/
   puestos: string[] = ["1", "2"];
-  turnoIds: string[];
-  turnoDetails: Promise<any>[];
+  optSelected = false;
   misTurnos1: Turno[];
   misTurnos2: Turno[];
+  /* Hasta aqui. */
+  turnoIds: string[];
+  turnoDetails: Promise<any>[];
+
   @Output() change = new EventEmitter();
   
 
@@ -63,4 +67,12 @@ export class DlgSelectUserComponent implements OnInit {
   }
 
   ngOnInit() {}
+  
+  clickOption(){
+    this.optSelected = true;
+  }
+  isDisabled(){
+    return 'disabled';
+  }
+
 }

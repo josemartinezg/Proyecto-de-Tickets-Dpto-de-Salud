@@ -11,7 +11,7 @@ export class RabbitmqPrintService {
   ngOnInit() {
     
   }
-  connect(){
+  /*connect(){
     amqp.connect('amqp://localhost', function(error0, connection) {
       if (error0) {
         throw error0;
@@ -37,7 +37,7 @@ export class RabbitmqPrintService {
     }, 500);
     });
 
-  }
+  }*/
 }
 
 
