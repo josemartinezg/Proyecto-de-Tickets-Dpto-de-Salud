@@ -24,7 +24,7 @@ export class ModalComponent implements OnInit {
       console.log(estadoForm);
 
     }else{
-      this.estadoService.updateEstado(estadoForm.value).subscribe(estado => location.reload())
+      this.estadoService.updateEstado(estadoForm.value).subscribe(estado => location.reload());
 
     }
 

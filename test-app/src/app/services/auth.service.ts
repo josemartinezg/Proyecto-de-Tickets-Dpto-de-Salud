@@ -1,61 +1,59 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { Usuario } from '../models/Usuario';
-import { isNullOrUndefined } from 'util';
-import { Globals } from '../../globals';
-import { GeneralConfig } from '../../app/pro_config';
+import { Globals } from '../../globals'; 
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs/internal/Observable";
+import { map } from "rxjs/operators";
+import { isNullOrUndefined } from "util";
+import { UserInterface } from '../models/User-interface';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   /*Probar */
   url:string;
-  relation: string = 'Users/'
+  relation: string = 'usuarios/'
 
-  constructor(private http: HttpClient,private glob: Globals) {
+  constructor(private htttp: HttpClient,private glob: Globals) {
     this.url = this.glob.SERVER_URL + this.relation;
   }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type":"aplication/json"
   });
+
+  // registerUser(name: string, email:string, password:string){
+  //   const url = this.url;
+  //   return this.htttp.post<UserInterface>(url,{name,email,password}).pipe(map(data => data));
+  // }
   
-   setToken(token){
-     localStorage.setItem("token",token);
+  loginUser(email: string, password: string): Observable<any> {
+    const url_api = this.url+"login?include=user";
+    return this.htttp
+      .post(
+        url_api,
+        { email, password },
+      )
+      .pipe(map(data => data));
+  }
 
-   }
+  setUser(user):void{
+    let user_string = JSON.stringify(user);
+    localStorage.setItem('currentUser',user_string);
+  }
 
-   getToken(){
-     return localStorage.getItem("token");
-  /*constructor(private http: HttpClient, private glob: Globals) {
-    this.url = this.glob.SERVER_URL + this.relation;*/
-   }
+  setToken(token):void{
+    localStorage.setItem("accessToken",token);
+  }
+ 
+  getToken(){
+    return localStorage.getItem("accessToken");
+ /*constructor(private htttp: HttpClient, private glob: Globals) {
+   this.url = this.glob.SERVER_URL + this.relation;*/
+  }
 
-   login(model:any){
-     return this.http.post(this.url + 'login',model).pipe(
-       map((response: any) => {
-         const user = response;
-         if(user){
-           this.setToken('token');
-         }
-       }) 
-       
-     )
-   }
-
-   register(model:any){
-     return this.http.post(this.url,model);
-   }
-
-   getUsers():Observable<Usuario[]>{
-     return this.http.get<Usuario[]>(this.url);
-     }
-
-  
   getCurrentUser(){
     let userString = localStorage.getItem("currentUser");
-    if(isNullOrUndefined(userString)){
+    if(!isNullOrUndefined(userString)){
       let user = JSON.parse(userString);
       return user;
     }else{
@@ -68,7 +66,30 @@ export class AuthService {
     const url =  this.url + 'logout?access_token=${accessToken}';
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
-    return this.http.post(url,{headers : this.headers})
+    return this.htttp.post(url,{headers : this.headers})
   }
+
+  
+
+  //  login(model:any){
+  //    return this.htttp.post(this.url + 'login?include=user',model).pipe(
+  //      map((response: any) => {
+  //        const user = response;
+  //        if(user){ 
+  //          this.setToken('token');
+  //        }
+  //      }) 
+       
+  //    )
+  //  }
+
+
+   register(model:any){
+     return this.htttp.post(this.url,model);
+   }
+
+
+  
+ 
 }
  

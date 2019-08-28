@@ -1,9 +1,8 @@
-import { UsuariosDataSource } from './../../models/UsuariosDataSource';
+import { UsuariosService } from './../../services/usuarios.service';
+import { UserInterface } from './../../models/User-interface';
 
-import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import { Usuario } from 'src/app/models/Usuario';
+import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 
 
 @Component({
@@ -11,19 +10,24 @@ import { Usuario } from 'src/app/models/Usuario';
   templateUrl: './usuarios-admin.component.html',
   styleUrls: ['./usuarios-admin.component.css']
 })
-export class UsuariosAdminComponent {
-  misUsuarios: Usuario[];
-  displayedColumns: string[] = ['id','realm', 'username', 'email','buttons'];
-  dataSource: UsuariosDataSource;
-  authService: AuthService;
+export class UsuariosAdminComponent implements OnInit {
 
-  private getAllTurnos(){
-    this.authService.getUsers().subscribe(
-      (usuarios: Usuario[]) => this.misUsuarios = usuarios);
+  constructor(private dataApi: UsuariosService, private dialog: MatDialog) { }
+  private usuarios : UserInterface;
+   ngOnInit() {
+    this.getListUsers();
   }
 
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  // }
+  getListUsers():void{
+    this.dataApi.getAllUsuarios().subscribe((usuarios: UserInterface) => (this.usuarios = usuarios));
+  }
+
+  onDeleteUser(id: string): void{ 
+    if(confirm("Estas seguro en eliminar el usuario con "+id+"?")) {
+      this.dataApi.deleteUsuario(id).subscribe();
+      window.location.reload();
+    }
+  }
+
 
 }

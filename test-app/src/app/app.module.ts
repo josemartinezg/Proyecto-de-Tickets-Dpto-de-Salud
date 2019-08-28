@@ -1,3 +1,6 @@
+import { AuthGuard } from './guards/auth.guard';
+import { ModalTipoTurnoComponent } from './admin/components/modal-tipo-turno/modal-tipo-turno.component';
+import { TipoturnoAdminComponent } from './admin/tipoturno-admin/tipoturno-admin.component';
 import { EstadoService } from './services/estado.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,7 +23,7 @@ import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tic
 import { OpcionUsuarioComponent } from './components/opcion-usuario/opcion-usuario.component';
 import { TituloComponent } from './components/titulo/titulo.component';
 import { BtnContainerComponent } from './components/btn-container/btn-container.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, CanActivate } from '@angular/router';
 import { SeleccionTicketsComponent } from './components/seleccion-tickets/seleccion-tickets.component';
 import { Turno } from './models/Turno';
 import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
@@ -109,11 +112,12 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
-      { path: 'admin', component: DashboardComponent},
-      { path: 'turnos-admin', component: TurnosAdminComponent},
-      { path: 'usuarios-admin', component: UsuariosAdminComponent},
-      { path: 'estados-admin', component: EstadosAdminComponent},
-      { path: 'puestos-admin', component: PuestoAdminComponent}
+      { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard]},
+      { path: 'turnos-admin', component: TurnosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'usuarios-admin', component: UsuariosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'estados-admin', component: EstadosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'puestos-admin', component: PuestoAdminComponent, canActivate: [AuthGuard]},
+      { path: 'tipoturno-admin', component: TipoturnoAdminComponent, canActivate: [AuthGuard]}
 
       
       
@@ -123,7 +127,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
   ],
   entryComponents: [
     DlgSelectUserComponent,
-    ModalComponent
+    ModalComponent,
+    ModalTipoTurnoComponent 
   ],
   providers: [
     TipoTurnoBtnService,

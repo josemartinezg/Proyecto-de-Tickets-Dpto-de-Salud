@@ -9,7 +9,7 @@
   "properties": {
     "id_consulta": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "tipo_consulta": {
       "type": "string",

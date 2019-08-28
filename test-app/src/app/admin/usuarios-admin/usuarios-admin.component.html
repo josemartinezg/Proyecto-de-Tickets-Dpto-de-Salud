@@ -1,59 +1,32 @@
 <sidebar>
-        <div class="mat-elevation-z8 data-table">
-                <h5>Listado de usuarios</h5>
-                <button mat-button routerLink="/signup">Añadir<mat-icon>add</mat-icon></button>
-                <span class="nav-spacer"></span>
-                <mat-form-field class="derecha" >
-                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro" >
-                </mat-form-field>
-                
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" mat-table-class="full-width-table">
-                    <!--- Note that these columns can be defined in any order.
-                          The actual rendered columns are set as a property on the row definition" -->
-                    <!-- Position Column -->
-                    <ng-container matColumnDef="id">
-                            <th mat-header-cell *matHeaderCellDef> Id </th>
-                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                          </ng-container>
+  <div class="container">
+    <h1>Usuarios</h1>
+    <div class="col">
+      <button mat-button routerLink="/signup" >Añadir<mat-icon>add</mat-icon></button> 
+            <table class="table table-striped">
+                    <thead>
+                            <tr>
+                                    <th>Nombre Usuario</th>
+                                    <th>Correo Electrónico</th>
+                                    <th>Eliminar</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let usuario of usuarios">
+                                        
+                                    <td>{{usuario.username}}</td>
+                                    <td>{{usuario.email}}</td>
+                                    <td><button mat-button (click)=onDeleteUser(usuario.id)>
+                                                    <mat-icon>delete</mat-icon>
+                                            </button></td>
+                            </tr>
 
-                    <!-- Position Column -->
-                    <ng-container matColumnDef="realm">
-                      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                      <td mat-cell *matCellDef="let element"> {{element.realm}} </td>
-                    </ng-container>
-                  
-                    <!-- Name Column -->
-                    <ng-container matColumnDef="username">
-                      <th mat-header-cell *matHeaderCellDef> Nombre Usuario </th>
-                      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-                    </ng-container>
-                  
-                    <!-- Weight Column -->
-                    <ng-container matColumnDef="email">
-                      <th mat-header-cell *matHeaderCellDef> Email </th>
-                      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-                    </ng-container>
-                  
-                  
-                    <ng-container matColumnDef="buttons">
-                        <th mat-header-cell *matHeaderCellDef> Opciones </th>
-                        <td mat-cell *matCellDef="let row">
-                                <button mat-button><mat-icon>edit</mat-icon></button>
-                                <button mat-button><mat-icon>delete</mat-icon></button>
-                              </td>
-                    </ng-container>
-    
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
-                    
-                  </table>
-                  <mat-paginator #paginator
-                        [pageIndex]="0"
-                        [pageSize]="5"
-                        [pageSizeOptions]="[5, 10]">
-                    </mat-paginator>
-                </div>
+                    </tbody>
+
+            </table>
+    </div>
+</div>
+
     
 </sidebar>
 

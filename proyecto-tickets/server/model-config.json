@@ -55,5 +55,9 @@
   "numero_puesto": {
     "dataSource": "postgre1",
     "public": true
+  },
+  "usuario": {
+    "dataSource": "postgre1",
+    "public": true
   }
 }
