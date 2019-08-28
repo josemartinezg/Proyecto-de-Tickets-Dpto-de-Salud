@@ -27,7 +27,6 @@ export class TurnosComponent implements OnInit {
       (val) => { this.turnoService.getTurnos().subscribe(
         turnos => {
           this.misTurnos = turnos;
-          
         }
       )
       });

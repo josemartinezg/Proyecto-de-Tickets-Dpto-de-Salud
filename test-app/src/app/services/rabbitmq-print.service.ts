@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OnInit } from '@angular/core';
 import * as amqp from 'amqplib/callback_api.js';
-import { connect } from 'net';
+
 @Injectable({
   providedIn: 'root'
 })

@@ -58,7 +58,8 @@ import {MatDividerModule} from '@angular/material/divider';
 
 
 
-const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
+
+const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,11 +76,7 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
     DlgSelectUserComponent,
     SelectUserComponent,
     RegistroUsuariosComponent,
-    PrinterMenuComponent,
-
-    
-  
-
+    PrinterMenuComponent
   ],
   imports: [
     BrowserModule,

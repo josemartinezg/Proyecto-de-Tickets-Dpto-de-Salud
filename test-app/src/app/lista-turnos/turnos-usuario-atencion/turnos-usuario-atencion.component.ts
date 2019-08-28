@@ -38,7 +38,7 @@ export class TurnosUsuarioAtencionComponent implements AfterViewInit, OnInit {
         }
       )
       });
-
+      console.log(this.turnoActual);
       this.updateSubscription = interval(1000).subscribe(
         (val) => { this.turnoServices.getTurnosActual().subscribe(
           turnos => {

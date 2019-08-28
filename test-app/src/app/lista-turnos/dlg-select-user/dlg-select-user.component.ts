@@ -27,7 +27,7 @@ export class DlgSelectUserComponent implements OnInit {
   /* Hasta aqui. */
   turnoIds: string[];
   turnoDetails: Promise<any>[];
-  turnoTemp: any;
+  misTurnos: Turno[] = [];
   printerName = "Generic / Text Only";
   @Output() change = new EventEmitter();
   
@@ -40,21 +40,25 @@ export class DlgSelectUserComponent implements OnInit {
       .subscribe(
         turno => {
           console.log(turno);
-          this.turnoTemp = turno;
         }
       );
+      this.getAllTurnos();
       this.onPrintZPL();
     }
-
+    private getAllTurnos(){
+      this.turnoService.getTurno().subscribe(
+        (turnos: Turno[]) => this.misTurnos = turnos);
+        setTimeout(function(){
+          console.log(this.turnos);
+        }, 3000);
+    }
     onOtherClick(){
       this.turnoService.getTurnosEstado1().subscribe(misTurnos1 => {this.misTurnos1 = misTurnos1
       console.log(misTurnos1)});
       this.turnoService.getTurnosEstado2().subscribe(misTurnos2 => {this.misTurnos2 = misTurnos2
       console.log(misTurnos2)}); 
       this.fuckThisShit();
-      
     }
-  
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -78,13 +82,17 @@ export class DlgSelectUserComponent implements OnInit {
     return 'disabled';
   }
   onPrintZPL() {
-    var colA = '<p style="font-weight: bold; font-size: 2mm;">Ticket 10001</p>';
-    var colB = '<p>Php 1500.00</p>';
-    var currentDate = new Date();
-    var printData = [
-            { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
-            '\n\n\n\n               Su turno:\n               ' + this.turnoTemp.id_turno + '\n\n\n               Puesto:\n                   ' + this.turnoTemp.no_puesto + '\n\n\n\n\n\n\n\n\n\n\n\n\n'
-        ];    
-    this.printService.printHTML(this.printerName, printData);
+    
+  //   var currentDate = new Date();
+  //   var printData = [
+  //           { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
+  //           '\n\n\n\n               Su turno:\n               ' 
+  //           + this.turnoTemp.id_turno + '\n\n\n               Puesto:\n                   ' 
+  //           + this.turnoTemp.no_puesto + '\n' 
+  //           + currentDate
+  //           + '\n\n\n\n\n\n\n\n\n\n\n\n\n'
+  //       ];    
+  //   this.printService.printHTML(this.printerName, printData);
+  // 
   }
 }
