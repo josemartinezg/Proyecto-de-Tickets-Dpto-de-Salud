@@ -1,5 +1,8 @@
+import { UserInterface } from './../../../models/User-interface';
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sidebar',
@@ -21,7 +24,9 @@ export class SidebarComponent implements OnInit {
   ]
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  user: UserInterface;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private atuhService: AuthService,private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -34,6 +39,20 @@ export class SidebarComponent implements OnInit {
   shouldRun = true;
 
   ngOnInit() {
+    this.user = this.atuhService.getCurrentUser();
+    
+  //  console.log(this.user);
+
   }
+  onLoggedout(){
+    if(confirm("Estas seguro que deseas cerrar sesión?")) {
+      this.atuhService.logoutUser();
+      this.router.navigate(['/login']);
+    }
+   
+   
+  }
+
+
 
 }

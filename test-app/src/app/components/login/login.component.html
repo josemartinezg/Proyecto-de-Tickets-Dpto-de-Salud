@@ -5,6 +5,9 @@
   </mat-card-header>
   <form #loginForm="ngForm" (ngSumit)="onLogin(loginForm)">
   <mat-card-content>
+      <div class="alert alert-danger" role="alert" *ngIf="isError">
+         Correo Electrónico  o contraseña incorrecta!
+        </div>
     <mat-form-field class="example-full-width">
       <input type="email" matInput name="email" placeholder="Email" required [(ngModel)]="user.email">
     </mat-form-field>

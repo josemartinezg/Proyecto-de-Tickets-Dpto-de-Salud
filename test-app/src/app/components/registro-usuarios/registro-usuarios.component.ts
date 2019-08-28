@@ -15,7 +15,7 @@ export class RegistroUsuariosComponent implements OnInit {
   public isError = false;
   public msgError = '';
   private user: UserInterface = {
-    name:'',
+    username:'',
     email: '',
     password: ''
   };  
@@ -38,7 +38,7 @@ export class RegistroUsuariosComponent implements OnInit {
         this.router.navigate(['/usuarios-admin']);
       }, res =>{
         this.msgError = res.error.error.details.messages.email;
-        this.onIsError();
+        this.isError = true;
       })
     }else{
       this.onIsError(); 

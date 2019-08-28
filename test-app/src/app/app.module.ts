@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { ModalTipoTurnoComponent } from './admin/components/modal-tipo-turno/modal-tipo-turno.component';
 import { TipoturnoAdminComponent } from './admin/tipoturno-admin/tipoturno-admin.component';
 import { EstadoService } from './services/estado.service';
@@ -22,7 +23,7 @@ import { ListaTicketsComponent } from './control-tickets/lista-tickets/lista-tic
 import { OpcionUsuarioComponent } from './components/opcion-usuario/opcion-usuario.component';
 import { TituloComponent } from './components/titulo/titulo.component';
 import { BtnContainerComponent } from './components/btn-container/btn-container.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, CanActivate } from '@angular/router';
 import { SeleccionTicketsComponent } from './components/seleccion-tickets/seleccion-tickets.component';
 import { Turno } from './models/Turno';
 import { TurnosComponent } from './lista-turnos/turnos/turnos.component';
@@ -52,7 +53,6 @@ import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.co
 import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
 import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
 import { ModalComponent } from './admin/components/modal/modal.component';
-import { AuthGuard } from '../app/guards/auth.guard';
 import { Globals } from 'src/globals';
 
 
@@ -108,7 +108,7 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
       { path: 'usuarios-atencion', component: TurnosUsuarioAtencionComponent},
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
-      { path: 'admin', component: DashboardComponent},
+      { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard]},
       { path: 'turnos-admin', component: TurnosAdminComponent},
       { path: 'usuarios-admin', component: UsuariosAdminComponent},
       { path: 'estados-admin', component: EstadosAdminComponent},

@@ -11,20 +11,13 @@
             <mat-menu #profile="matMenu">
                 <button mat-menu-item>
                     <mat-icon>person</mat-icon>
-                    <span>{{ 'Profile' }}</span>
+                    <span>{{ user.username }}</span>
                 </button>
-                <button mat-menu-item>
-                    <mat-icon>inbox</mat-icon>
-                    <span>{{ 'Inbox' }}</span>
-                </button>
-                <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>
-                    <span>{{ 'Settings'  }}</span>
+                <button mat-menu-item (click)="onLoggedout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>{{ 'Cerrar Sesión' }}</span>
                 </button>
             </mat-menu>
-            <button mat-icon-button (click)="onLoggedout()">
-                <mat-icon>exit_to_app</mat-icon>
-            </button>
         </mat-toolbar>
       
         <mat-sidenav-container class="example-sidenav-container"
@@ -42,7 +35,9 @@
           </mat-sidenav-content>
         </mat-sidenav-container>
       </div>
-      
+       
       <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
       
+
+    
     

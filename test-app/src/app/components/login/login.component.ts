@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           //location.reload();
           this.isError = false;
         },
-        error => this.onIsError()
+        error => {this.isError = true;}
         );
     } else {
       this.onIsError();
