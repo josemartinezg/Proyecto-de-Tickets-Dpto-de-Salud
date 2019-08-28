@@ -83,7 +83,7 @@ export class DlgSelectUserComponent implements OnInit {
     var currentDate = new Date();
     var printData = [
             { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
-            '\n\n\n\n               Su turno:\n               ' + this.turnoTemp.id_turno + '\n\n\n               Puesto:\n                   ' + this.turnoTemp.no_puesto + '\n\n\n\n\n\n\n\n\n\n\n\n\n'
+            '\n\n\n\n               Su turno:\n               ' + 'EMP' + '\n\n\n               Puesto:\n                   ' + '1' + '\n\n\n\n\n\n\n\n\n\n\n\n\n'
         ];    
     this.printService.printHTML(this.printerName, printData);
   }
