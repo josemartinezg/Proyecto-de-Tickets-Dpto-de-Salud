@@ -109,11 +109,11 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
       { path: 'login', component: LoginComponent},
       { path: 'signup', component: RegistroUsuariosComponent},
       { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard]},
-      { path: 'turnos-admin', component: TurnosAdminComponent},
-      { path: 'usuarios-admin', component: UsuariosAdminComponent},
-      { path: 'estados-admin', component: EstadosAdminComponent},
-      { path: 'puestos-admin', component: PuestoAdminComponent},
-      { path: 'tipoturno-admin', component: TipoturnoAdminComponent}
+      { path: 'turnos-admin', component: TurnosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'usuarios-admin', component: UsuariosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'estados-admin', component: EstadosAdminComponent, canActivate: [AuthGuard]},
+      { path: 'puestos-admin', component: PuestoAdminComponent, canActivate: [AuthGuard]},
+      { path: 'tipoturno-admin', component: TipoturnoAdminComponent, canActivate: [AuthGuard]}
 
       
       

@@ -12,7 +12,7 @@ import { UserInterface } from '../models/User-interface';
 export class AuthService {
   /*Probar */
   url:string;
-  relation: string = 'Users/'
+  relation: string = 'usuarios/'
 
   constructor(private htttp: HttpClient,private glob: Globals) {
     this.url = this.glob.SERVER_URL + this.relation;
@@ -37,7 +37,6 @@ export class AuthService {
   }
 
   setUser(user):void{
-    console.log(user);
     let user_string = JSON.stringify(user);
     localStorage.setItem('currentUser',user_string);
   }
@@ -54,10 +53,8 @@ export class AuthService {
 
   getCurrentUser(){
     let userString = localStorage.getItem("currentUser");
-    console.log(userString);
     if(!isNullOrUndefined(userString)){
       let user = JSON.parse(userString);
-      console.log(user);
       return user;
     }else{
       return null;
