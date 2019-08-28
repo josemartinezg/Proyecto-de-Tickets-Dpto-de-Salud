@@ -146,7 +146,7 @@ export class DlgSelectUserComponent implements OnInit {
         }else{
           TService.createTurno(TData.turno, "2").subscribe(
             turno => {console.log(turno);}
-          );;
+          );
         }
         Close.close();    
       }, 1000)})});
