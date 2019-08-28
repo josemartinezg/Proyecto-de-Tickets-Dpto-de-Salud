@@ -9,7 +9,6 @@
     "port": 5433,
     "url": "",
     "database": "postgres",
-    "password": "0597",
     "password": "chema03",
     "name": "postgre1",
     "user": "postgres",

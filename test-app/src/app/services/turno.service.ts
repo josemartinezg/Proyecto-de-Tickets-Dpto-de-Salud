@@ -34,8 +34,8 @@ export class TurnoService {
   get refreshNeeded$(){
     return this._refreshNeeded$;
   }
-  getTurno(): Observable<Turno[]>{
-    return this.http.get<Turno[]>(this.url + this.filterUltimoTurno);
+  getTurno(): Observable<Turno>{
+    return this.http.get<Turno>(this.url + this.filterUltimoTurno);
   }
 
   getTurnos():Observable<Turno[]>{

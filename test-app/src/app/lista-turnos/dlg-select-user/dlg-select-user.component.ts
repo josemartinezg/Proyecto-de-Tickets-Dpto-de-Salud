@@ -28,7 +28,7 @@ export class DlgSelectUserComponent implements OnInit {
   /* Hasta aqui. */
   turnoIds: string[];
   turnoDetails: Promise<any>[];
-  misTurnos: Turno[] = [];
+  misTurnos: Turno;
   printerName = "Generic / Text Only";
   @Output() change = new EventEmitter();
   
@@ -46,14 +46,13 @@ export class DlgSelectUserComponent implements OnInit {
         }
       );
       this.getAllTurnos();
-      this.onPrintZPL();
+      //this.onPrintZPL();
     }
     private getAllTurnos(){
       this.turnoService.getTurno().subscribe(
-        (turnos: Turno[]) => this.misTurnos = turnos);
-        setTimeout(function(){
-          console.log(this.turnos);
-        }, 3000);
+        (turno: Turno) => {this.misTurnos = turno
+        this.onPrintZPL(this.misTurnos)});
+       
     }
     onOtherClick(){
       const TService = this.turnoService;
@@ -100,7 +99,8 @@ export class DlgSelectUserComponent implements OnInit {
   isDisabled(){
     return 'disabled';
   }
-  onPrintZPL() {
+  onPrintZPL(misTurnos: Turno) {
+    console.log(misTurnos.id_turno + ' '+ misTurnos.no_puesto);
   //   var currentDate = new Date();
   //   var printData = [
   //           { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
