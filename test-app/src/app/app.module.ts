@@ -50,7 +50,7 @@ import { UsuariosAdminComponent } from './admin/usuarios-admin/usuarios-admin.co
 import { EstadosAdminComponent } from './admin/estados-admin/estados-admin.component';
 import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.component';
 import { ModalComponent } from './admin/components/modal/modal.component';
-import { AuthGuard } from '../app/guards/auth.guard';
+//import { AuthGuard } from '../app/guards/auth.guard';
 import { Globals } from 'src/globals';
 import { PrinterMenuComponent } from './printer-menu/printer-menu.component';
 import { QzTrayService } from './services/qz-tray.service';
