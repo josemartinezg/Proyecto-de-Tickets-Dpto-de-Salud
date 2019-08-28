@@ -21,8 +21,9 @@
 <div>Puesto seleccionado: {{puestoSeleccionado}}</div>
 <div class="container">
   <mat-card-actions>
-  <button mat-raised-button (click) ='onOtherClick()'
-  color="primary">Auto</button>
+  <!-- Botón de asignación aleatoria, con su función habilitada. -->
+  <button mat-raised-button
+  color="primary" (click)='onOtherClick()'>Auto</button>
   <button mat-raised-button mat-dialog-close
   (click)='onClick(puestoSeleccionado)'
   >OK</button>
