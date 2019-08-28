@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit, OnDestroy, ViewChild, Input } from '@angular/core';
-import { MatPaginator, MatSort, MatTable } from '@angular/material';
 // import { TurnosUsuarioAtencionDataSource, TurnosUsuarioAtencionItem } from './turnos-usuario-atencion-datasource';
 import { TurnoService } from '../../services/turno.service';
 import { TurnoDataSource } from '../../models/TurnoDataSource';
@@ -39,7 +38,7 @@ export class TurnosUsuarioAtencionComponent implements AfterViewInit, OnInit {
         }
       )
       });
-
+      console.log(this.turnoActual);
       this.updateSubscription = interval(1000).subscribe(
         (val) => { this.turnoServices.getTurnosActual().subscribe(
           turnos => {

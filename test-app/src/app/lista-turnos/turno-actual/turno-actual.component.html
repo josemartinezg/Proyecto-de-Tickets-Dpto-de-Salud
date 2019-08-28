@@ -7,11 +7,10 @@
   <mat-card-subtitle>Turno actual</mat-card-subtitle>
   <mat-card-actions >
     <div>
+        <button mat-raised-button ok
+        (click)="finalizar()">Finalizar</button>
         <button mat-raised-button
-        (click)="onClick()"
-        mat-raised-button [disabled]='isEnabled'
-        color="primary">Aceptar</button>
-        <button mat-raised-button>Cancelar</button>
+        (click)="declinar()">Declinar</button>
     </div>
   </mat-card-actions>
 

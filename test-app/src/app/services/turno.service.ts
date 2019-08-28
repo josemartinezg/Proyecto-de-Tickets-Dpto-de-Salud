@@ -15,12 +15,14 @@ export class TurnoService {
   
   url:string;
   relation: string = 'turnos';
-  limitUsuario = '?filter[where][or][0][estado_id]=1&filter[where][or][1][estado_id]=2';
+  filterTurnosEspera = '?filter[where][or][0][estado_id]=1&filter[where][or][1][estado_id]=2';
+  filterUltimoTurno = '?filter[order]=id%20DESC&filter[limit]=1';
   limitActual = '?filter[where][estado_id]=3&filter[limit]=1';
   limitLlamada = '?filter[where][estado_id]=2&filter[limit]=1';
   limitEspera1 = '?filter[where][and][0][estado_id]=1&filter[where][and][1][no_puesto]=1';
   limitEspera2 = '?filter[where][and][0][estado_id]=1&filter[where][and][1][no_puesto]=2';
   private _refreshNeeded$ = new Subject<void>();
+  todosMisTurnos: any;
   // private turnoActualTest = new BehaviorSubject<string>('john');
   // cast = this.turnoActualTest.asObservable();
   
@@ -32,9 +34,12 @@ export class TurnoService {
   get refreshNeeded$(){
     return this._refreshNeeded$;
   }
+  getTurno(): Observable<Turno[]>{
+    return this.http.get<Turno[]>(this.url + this.filterUltimoTurno);
+  }
 
   getTurnos():Observable<Turno[]>{
-    return this.http.get<Turno[]>(this.url + this.limitUsuario);
+    return this.http.get<Turno[]>(this.url + this.filterTurnosEspera);
   }
 
   getTurnosActual():Observable<Turno[]>{
@@ -53,31 +58,31 @@ export class TurnoService {
     return this.http.get<Turno[]>(this.url + this.limitEspera2);
   }
 
-  generarTurno(turno, puesto){
+  // generarTurno(turno, puesto){
 
-    count++;
-    var turnoHoy = new TurnosHoy();
-    turnoHoy.getTurno(turno, count);
-    console.log(turnoHoy.codigo);
-    var dateTime = turnoHoy.getDate();
-    let post = {
-      id_turno: turnoHoy.codigo,
-      tipo_consulta: turno, 
-      id_usuario_atencion: "sorodriguez",
-      fecha_hora_emision: dateTime,
-      consulta_id: 1,
-      usuarios_id: 2,
-      estado_id: 1,
-      no_puesto: puesto
+  //   count++;
+  //   var turnoHoy = new TurnosHoy();
+  //   turnoHoy.getTurno(turno, count);
+  //   console.log(turnoHoy.codigo);
+  //   var dateTime = turnoHoy.getDate();
+  //   let post = {
+  //     id_turno: turnoHoy.codigo,
+  //     tipo_consulta: turno, 
+  //     id_usuario_atencion: "sorodriguez",
+  //     fecha_hora_emision: dateTime,
+  //     consulta_id: 1,
+  //     usuarios_id: 2,
+  //     estado_id: 1,
+  //     no_puesto: puesto
 
-    }
-    this.http.post(this.url, post)
-    .subscribe(response =>{
-    console.log(response);
-    })
-    // this.sendLiveTicket(post);
-    // console.log("Generar turno.");
-  }
+  //   }
+  //   this.http.post(this.url, post)
+  //   .subscribe(response =>{
+  //   console.log(response);
+  //   })
+  //   // this.sendLiveTicket(post);
+  //   // console.log("Generar turno.");
+  // }
 
   createTurno(turno, puesto): Observable<Turno>{
     count++;

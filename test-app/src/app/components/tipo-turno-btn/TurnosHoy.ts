@@ -5,22 +5,22 @@ export class TurnosHoy{
     getTurno(tipo_consulta, count){
             switch(tipo_consulta){
                 case "Estudiante":
-                    this.codigo = "EST00"+count; 
+                    this.codigo = "EST"+count; 
                 break;
                 case "Empleado":
-                        this.codigo = "EMP00"+count; 
+                        this.codigo = "EMP"+count; 
                 break;
                 case "Contratista":
-                        this.codigo = "CNT00"+count; 
+                        this.codigo = "CNT"+count; 
                 break;
                 case "Piscina":
-                        this.codigo = "PSC00"+count; 
+                        this.codigo = "PSC"+count; 
                 break;
                 case "Certificacion Medica":
-                        this.codigo = "CFM00"+count; 
+                        this.codigo = "CFM"+count; 
                 break;
                 case "Emergencia":
-                        this.codigo = "EMG00"+count; 
+                        this.codigo = "EMG"+count; 
                 break;
             }
             return this.codigo;

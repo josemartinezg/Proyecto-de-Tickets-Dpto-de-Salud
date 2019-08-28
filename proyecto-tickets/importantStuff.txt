@@ -1,0 +1,11 @@
+  /*en VM:
+    "postgre1": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "postgres",
+    "password": "12345678",
+    "name": "postgre1",
+    "user": "postgres",
+    "connector": "postgresql"
+  }*/
