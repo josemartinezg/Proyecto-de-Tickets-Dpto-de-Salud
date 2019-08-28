@@ -114,6 +114,7 @@ export class DlgSelectUserComponent implements OnInit {
     popupWin.document.close();
   }
     onClick(puestoSeleccionado){
+      
       console.log(this.data.turno);
       this.turnoService.createTurno(this.data.turno, puestoSeleccionado)
       .subscribe(
@@ -161,8 +162,6 @@ export class DlgSelectUserComponent implements OnInit {
   sendLiveTicket(){
     
   }
-
-  
 
   ngOnInit() {}
 }

@@ -14,7 +14,9 @@ export class AuthService {
   url:string;
   relation: string = 'Users/'
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private glob: Globals) {
+    this.url = this.glob.SERVER_URL + this.relation;
+  }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type":"aplication/json"
   });
@@ -63,7 +65,7 @@ export class AuthService {
 
   logoutUser(){
     let accessToken = localStorage.getItem('accessToken');
-    const url = 'http://localhost:3100/api/Users/logout?access_token=${accessToken}';
+    const url =  this.url + 'logout?access_token=${accessToken}';
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
     return this.http.post(url,{headers : this.headers})
