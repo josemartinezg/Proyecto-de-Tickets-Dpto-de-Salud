@@ -1,5 +1,20 @@
+mat-card-title{
+    font-size: 300%;
+    color: royalblue;
+}
 .mat-card{
-    height: 150px;
+    height: 135px;
+    width: 600px;
     text-align: center;
+    background: #e8eaf6;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;  
+    vertical-align:middle;
     /* Aumentar tama;o y color de letra del turno. */
 }
+
+.mat-card-subtitle{
+    font-size: 125%;
+}
+

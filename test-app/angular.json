@@ -27,8 +27,11 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jsonwebtoken/index.js"
-            ]
+              "src/scripts/qz-tray.js",
+              "src/scripts/rsvp-3.1.0.min.js",
+              "src/scripts/sha-256.min.js",
+              "node_modules/jsrsasign/lib/jsrsasign-all-min.js"
+            ] 
           },
           "configurations": {
             "production": {

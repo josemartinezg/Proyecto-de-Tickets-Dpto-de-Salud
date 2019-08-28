@@ -1,3 +1,4 @@
+
 {
   "db": {
     "name": "db",
@@ -5,7 +6,7 @@
   },
   "postgre1": {
     "host": "localhost",
-    "port": 5432,
+    "port": 5433,
     "url": "",
     "database": "postgres",
     "password": "chema03",
@@ -14,3 +15,5 @@
     "connector": "postgresql"
   }
 }
+
+

@@ -1,0 +1,14 @@
+.mini-header{
+    font-size: 300%;
+    color: gray;
+    text-align: center;
+    margin-top: 65px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+.mini-header-title{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 65px;
+}

@@ -52,9 +52,14 @@ import { PuestoAdminComponent } from './admin/puesto-admin/puesto-admin.componen
 import { ModalComponent } from './admin/components/modal/modal.component';
 //import { AuthGuard } from '../app/guards/auth.guard';
 import { Globals } from 'src/globals';
+import { PrinterMenuComponent } from './printer-menu/printer-menu.component';
+import { QzTrayService } from './services/qz-tray.service';
+import {MatDividerModule} from '@angular/material/divider';
 
 
-const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
+
+
+const config: SocketIoConfig = { url: 'http://localhost:3005', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,10 +76,7 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
     DlgSelectUserComponent,
     SelectUserComponent,
     RegistroUsuariosComponent,
-
-    
-  
-
+    PrinterMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +101,7 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
     MatBottomSheetModule,
     MatRadioModule,
     AdminModule,
+    MatDividerModule,
     SocketIoModule.forRoot(config),
     RouterModule.forRoot([
       { path: '', component: SeleccionTicketsComponent},
@@ -127,7 +130,8 @@ const config: SocketIoConfig = { url: 'http://192.168.77.9:3005', options: {} };
     AuthService,
     EstadoService,
     Globals,
-    AuthService
+    AuthService,
+    QzTrayService
   ],
   bootstrap: [AppComponent]
 })

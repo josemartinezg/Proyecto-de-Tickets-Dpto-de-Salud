@@ -13,7 +13,7 @@ export class TurnoActualComponent implements OnInit {
   @Input() idTurno: String;
   @Input() turno: Turno;
   @Input() disabled: boolean;
-  isEnabled: boolean = false;
+ // isEnabled: boolean = false;
   response: any;
   misTurnos:TurnosHoy[];
   url: string;
@@ -25,12 +25,10 @@ export class TurnoActualComponent implements OnInit {
 
   ngOnInit() {
   }
-  onClick(){
-    this.isEnabled = !this.isEnabled;
+  finalizar(){
     var route: string = "/" + this.turno.id;
     var turnoHoy = new TurnosHoy();
     var dateTime = turnoHoy.getDate();
-    //fecha_hora_inicio: dateTime
     console.log(dateTime);
       this.http.patch(this.url + route, {fecha_hora_fin: dateTime, estado_id: 5})
     .subscribe((response) => {
@@ -38,6 +36,17 @@ export class TurnoActualComponent implements OnInit {
         console.log(response);
       })
     this.http.get(this.url)
+    .subscribe((response) => {
+        this.response = response;
+        console.log(response);
+      })
+  }
+  declinar(){
+    var route: string = "/" + this.turno.id;
+    var turnoHoy = new TurnosHoy();
+    var dateTime = turnoHoy.getDate();
+    console.log(dateTime);
+      this.http.patch(this.url + route, {fecha_hora_fin: dateTime, estado_id: 4})
     .subscribe((response) => {
         this.response = response;
         console.log(response);

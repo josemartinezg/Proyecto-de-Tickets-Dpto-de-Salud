@@ -21,11 +21,10 @@ import { BtnAceptarComponent } from './btn-aceptar/btn-aceptar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BtnLlamarComponent } from './btn-llamar/btn-llamar.component';
 import { DlgTurnoLlamadoComponent } from './dlg-turno-llamado/dlg-turno-llamado.component';
-
-
+import { BtnDeclinarComponent } from './btn-declinar/btn-declinar.component';
 
 @NgModule({
-  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent, BtnAceptarComponent, BtnLlamarComponent, DlgTurnoLlamadoComponent],
+  declarations: [TurnosComponent, TurnosTxtComponent, TurnosUsuarioAtencionComponent, TurnoActualComponent,  OpcionUsuarioComponent, NavbarComponent, BtnAceptarComponent, BtnLlamarComponent, DlgTurnoLlamadoComponent, BtnDeclinarComponent],
   imports: [
     CommonModule,
     MatListModule, 
@@ -40,10 +39,8 @@ import { DlgTurnoLlamadoComponent } from './dlg-turno-llamado/dlg-turno-llamado.
     MatMenuModule,
     MatToolbarModule,
     FlexLayoutModule
-
-  
     
-   
+
   ],
   exports: [
     TurnosComponent,
@@ -53,7 +50,8 @@ import { DlgTurnoLlamadoComponent } from './dlg-turno-llamado/dlg-turno-llamado.
     NavbarComponent,
     TurnoActualComponent,
     BtnAceptarComponent,
-    BtnLlamarComponent
+    BtnLlamarComponent,
+    BtnDeclinarComponent
     
   ]
 })
