@@ -82,7 +82,6 @@ export class DlgSelectUserComponent implements OnInit {
     return 'disabled';
   }
   onPrintZPL() {
-    
   //   var currentDate = new Date();
   //   var printData = [
   //           { type: 'raw', format: 'file', data: 'assets/zpl_sample.txt', options: { language: 'ZPLII' } },
