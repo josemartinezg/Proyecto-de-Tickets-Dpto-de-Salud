@@ -1,4 +1,4 @@
-# Proyecto-de-Tickets-Dpto-de-Salud
+# Proyecto de Tickets del Departamento de Servicios de Salud
 Proyecto del Grupo 1 de Ingeniería de Software.
 
 ## Descripción:
