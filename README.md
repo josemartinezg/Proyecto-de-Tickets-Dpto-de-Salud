@@ -18,12 +18,12 @@ Si se ha de correr desde el servidor, sólo debe de tenerse en la máquina de pr
 
 ### Instrucciones para corrida local:
 * Realizar un git clone del repositorio
-* Proceder a la carpeta de nombre "proyecto-tickets" y correr los siguientes mandatos: node index.js y node . . Esto habilitará el servidor de la aplicación. 
-* Proceder a la carpeta de nombre "test-app" y correr el siguiente mandato: ng serve.
-* Proceder a la instalación local de metabase.jar, colocándolo en una carpeta independiente, y corriendo el mandato: java -jar metabase.jar. Luego, se requerirán unas credenciales para la composición o realización de dashboards para visualizar la data. 
+* Proceder a la carpeta de nombre "```proyecto-tickets```" y correr los siguientes mandatos: ```node index.js``` y ```node . ```. Esto habilitará el servidor de la aplicación. 
+* Proceder a la carpeta de nombre "```test-app```" y correr el siguiente mandato: ```ng serve```.
+* Proceder a la instalación local de ```metabase.jar```, colocándolo en una carpeta independiente, y corriendo el mandato: ```java -jar metabase.jar```. Luego, se requerirán unas credenciales para la composición o realización de dashboards para visualizar la data. 
 * Ejecutar QZTray. 
 
 ### Instrucciones para corrida desde la máquina virtual de la universidad.
 Para accesar a la red virtual privada de la universidad, debe de tenerse el software OpenVPN (Windows) u OpenForti (Linux). Para esto sólo se necesitan las credenciales de la universidad y una configuración que debe de ser solicitada a los colaboradores de este repositorio. 
 De estar hábil, la máquina virtual debe de poseer las aplicaciones del servidor, del cliente, la base de datos, y el servicio de análisis de datos corriendo con un manejador de procesos. 
-De esto ser así, sólo debe de ejecutarse QZTray localmente, y, seguido, acceder a 192.168.77.9:4200, para acceder a la aplicación.
+De esto ser así, sólo debe de ejecutarse QZTray localmente, y, seguido, acceder a 192.168.77.9:4200, para utilizar a la aplicación.
