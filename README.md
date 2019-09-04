@@ -18,7 +18,7 @@ Si se ha de correr desde el servidor, sólo debe de tenerse en la máquina de pr
 
 ### Instrucciones para corrida local:
 * Realizar un git clone del repositorio
-* Proceder a la carpeta de nombre "```proyecto-tickets```" y correr los siguientes mandatos: ```node index.js``` y ```node . ```. Esto habilitará el servidor de la aplicación. 
+* Proceder a la carpeta de nombre "```proyecto-tickets```" y correr los siguientes mandatos: ```node index.js``` y ```node .```. Esto habilitará el servidor de la aplicación. 
 * Proceder a la carpeta de nombre "```test-app```" y correr el siguiente mandato: ```ng serve```.
 * Proceder a la instalación local de ```metabase.jar```, colocándolo en una carpeta independiente, y corriendo el mandato: ```java -jar metabase.jar```. Luego, se requerirán unas credenciales para la composición o realización de dashboards para visualizar la data. 
 * Ejecutar QZTray. 
